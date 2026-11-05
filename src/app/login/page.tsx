@@ -42,7 +42,7 @@ export default function LoginPage() {
             Sign In to AtchuJobs
           </h2>
           <p className="text-xs text-slate-500">
-            Atchuthapuram Mandal Local Employment Portal
+            Atchuthapuram Local Employment Portal
           </p>
         </div>
 
@@ -190,3 +190,4 @@ export default function LoginPage() {
     </div>
   );
 }
+

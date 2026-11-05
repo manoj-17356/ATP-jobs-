@@ -120,10 +120,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       role: 'job_seeker',
       village_name: data.villageName,
       village_id: data.villageId,
-      mandal: 'Atchuthapuram',
-      district: 'Anakapalli',
       headline: data.headline || `Job Seeker from ${data.villageName}`,
-      bio: `Native resident of ${data.villageName}, Atchuthapuram Mandal seeking genuine local career opportunities.`,
+      bio: `Native resident of ${data.villageName}, Atchuthapuram seeking genuine local career opportunities.`,
       skills: ['Communication', 'Teamwork', 'Local Knowledge'],
       education: [],
       experience: [],
@@ -160,8 +158,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       phone: data.phone,
       role: 'employer',
       village_name: data.villageName,
-      mandal: 'Atchuthapuram',
-      district: 'Anakapalli',
       is_suspended: false,
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
@@ -173,7 +169,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       company_name: data.companyName,
       industry: data.industry,
       company_type: 'Private Unit',
-      description: `${data.companyName} based in ${data.villageName}, Atchuthapuram Mandal.`,
+      description: `${data.companyName} based in ${data.villageName}, Atchuthapuram.`,
       contact_email: data.email,
       contact_phone: data.phone,
       address: data.address,
@@ -254,3 +250,4 @@ export function useAuth() {
   }
   return context;
 }
+

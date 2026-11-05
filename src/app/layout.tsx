@@ -6,15 +6,14 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
-  title: 'AtchuJobs – Local Jobs. Local Opportunities. (Atchuthapuram Mandal)',
+  title: 'AtchuJobs – Local Jobs. Local Opportunities. (Atchuthapuram)',
   description:
-    'Dedicated job portal exclusively for Atchuthapuram Mandal, Anakapalli District, Andhra Pradesh. Genuine verified vacancies from APSEZ, Brandix Apparel City, and local industrial units.',
+    'Dedicated job portal exclusively for Atchuthapuram. Genuine verified vacancies from industrial parks, Brandix Apparel City, and local enterprises.',
   keywords: [
     'Atchuthapuram jobs',
-    'APSEZ jobs',
+    'SEZ jobs',
     'Brandix India Apparel City careers',
-    'Anakapalli district employment',
-    'Atchuthapuram mandal vacancies',
+    'Atchuthapuram vacancies',
     'Pharma jobs Atchuthapuram',
   ],
 };

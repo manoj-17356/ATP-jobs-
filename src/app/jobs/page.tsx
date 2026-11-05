@@ -72,13 +72,13 @@ function JobsContent() {
         <div className="max-w-3xl mb-6">
           <div className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-400 bg-amber-400/10 px-2.5 py-1 rounded-md mb-2">
             <MapPin className="w-3.5 h-3.5" />
-            Atchuthapuram Mandal Vacancies
+            Atchuthapuram Vacancies
           </div>
           <h1 className="text-2xl sm:text-3xl font-black">
             Explore Verified Local Jobs
           </h1>
           <p className="text-xs sm:text-sm text-slate-300 mt-1">
-            Discover opportunities across APSEZ, Brandix Apparel City, Pharma cluster, and local commercial units.
+            Discover opportunities across industrial zones, Brandix Apparel City, Pharma cluster, and local commercial units.
           </p>
         </div>
 
@@ -197,3 +197,4 @@ export default function JobsPage() {
     </Suspense>
   );
 }
+

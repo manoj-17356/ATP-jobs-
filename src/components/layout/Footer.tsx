@@ -7,22 +7,18 @@ import { Briefcase, ShieldCheck, MapPin, Phone, Mail, AlertTriangle } from 'luci
 import { ATCHUTHAPURAM_VILLAGES } from '@/lib/data/villages';
 
 export default function Footer() {
-  const { language, t } = useLanguage();
+  const { t } = useLanguage();
 
   return (
     <footer className="bg-navy-950 text-slate-300 border-t border-navy-800">
-      {/* Mandal Anti-Fraud Banner */}
+      {/* Anti-Fraud Banner */}
       <div className="bg-gradient-to-r from-red-950/80 via-navy-900 to-red-950/80 border-b border-red-900/50 py-3 px-4">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-3 text-xs">
           <div className="flex items-center gap-2 text-red-200">
             <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0" />
             <span>
               <strong>{t.zeroFeeNoticeTitle}:</strong> {t.zeroFeeNoticeText}
             </span>
-          </div>
-          <div className="flex items-center gap-3 shrink-0">
-            <span className="text-slate-400">Toll-free Fraud Desk:</span>
-            <span className="font-mono text-amber-400 font-bold">1800-425-ATCHU</span>
           </div>
         </div>
       </div>
@@ -40,9 +36,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-xs text-slate-400 max-w-sm leading-relaxed">
-              {language === 'te'
-                ? 'అచ్యుతాపురం మండలం, అనకాపల్లి జిల్లా కొరకు ప్రత్యేకంగా రూపొందించబడిన విశ్వసనీయ స్థానిక ఉద్యోగ పోర్టల్. APSEZ, బ్రాండిక్స్ అపారెల్ సిటీ మరియు స్థానిక కంపెనీల్లో అర్హులైన నిరుద్యోగ యువతకు సురక్షిత ఉద్యోగ అవకాశాలు.'
-                : 'Dedicated hyper-local employment portal exclusively for Atchuthapuram Mandal, Anakapalli District, Andhra Pradesh. Connecting local talent with APSEZ, Brandix Apparel City, Pharma SEZ, and regional enterprises.'}
+              Dedicated local employment portal exclusively for Atchuthapuram. Connecting local talent with SEZ manufacturing units, Brandix Apparel City, Pharma clusters, and regional commercial enterprises.
             </p>
             <div className="flex items-center gap-2 text-xs text-emerald-400 font-semibold bg-emerald-950/50 border border-emerald-800/60 p-2 rounded-lg max-w-sm">
               <ShieldCheck className="w-4 h-4 shrink-0" />
@@ -53,7 +47,7 @@ export default function Footer() {
           {/* Key Villages */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-slate-200 mb-3">
-              {language === 'te' ? 'ప్రధాన గ్రామాలు' : 'Key Mandal Villages'}
+              Key Local Villages
             </h4>
             <ul className="space-y-1.5 text-xs text-slate-400">
               {ATCHUTHAPURAM_VILLAGES.slice(0, 6).map((v) => (
@@ -62,7 +56,7 @@ export default function Footer() {
                     href={`/jobs?village=${encodeURIComponent(v.name)}`}
                     className="hover:text-blue-400 transition"
                   >
-                    {language === 'te' ? v.name_te : v.name}
+                    {v.name}
                   </Link>
                 </li>
               ))}
@@ -111,12 +105,12 @@ export default function Footer() {
           {/* Office & Contact */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-slate-200 mb-3">
-              Mandal Office Desk
+              Local Office Desk
             </h4>
             <ul className="space-y-2 text-xs text-slate-400">
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-slate-500 shrink-0 mt-0.5" />
-                <span>Atchuthapuram Main Road, Anakapalli Dist, Andhra Pradesh - 531011</span>
+                <span>Atchuthapuram Main Road - 531011</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-slate-500 shrink-0" />
@@ -132,13 +126,13 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-6 border-t border-navy-800 text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p>© 2026 AtchuJobs. All rights reserved. Exclusively for Atchuthapuram Mandal, AP.</p>
+          <p>© 2026 AtchuJobs. All rights reserved. Exclusively for Atchuthapuram.</p>
           <div className="flex items-center space-x-4">
             <span className="text-slate-400">Security & Privacy First</span>
             <span>•</span>
-            <span className="text-slate-400">Govt Guidelines Compliant</span>
+            <span className="text-slate-400">Strict Anti-Fraud Guarantee</span>
             <span>•</span>
-            <span className="text-slate-400">SEZ Local Employment Initiative</span>
+            <span className="text-slate-400">Local Employment Initiative</span>
           </div>
         </div>
       </div>

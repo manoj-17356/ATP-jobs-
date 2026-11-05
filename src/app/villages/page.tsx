@@ -20,10 +20,10 @@ export default function VillagesPage() {
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 bg-emerald-400/10 px-2.5 py-1 rounded-md mb-2">
             <MapPin className="w-3.5 h-3.5" />
-            Atchuthapuram Mandal Gram Panchayat Directory
+            Atchuthapuram Local Villages Directory
           </div>
           <h1 className="text-2xl sm:text-3xl font-black">
-            Jobs by Village in Atchuthapuram Mandal
+            Jobs by Village in Atchuthapuram
           </h1>
           <p className="text-xs sm:text-sm text-slate-300 mt-1">
             Browse localized employment opportunities mapped to your home village. SEZ employers often provide dedicated shuttle bus pick-ups from these points.
@@ -56,11 +56,8 @@ export default function VillagesPage() {
                 <h3 className="font-bold text-base text-navy-950 group-hover:text-blue-600 transition">
                   {village.name}
                 </h3>
-                <span className="text-xs font-medium text-slate-500 block">
-                  {village.name_te}
-                </span>
-                <span className="text-[11px] text-slate-400 mt-1 block">
-                  Mandal: Atchuthapuram • Anakapalli Dist
+                <span className="text-xs text-slate-500 block mt-1">
+                  Atchuthapuram Region
                 </span>
               </div>
 

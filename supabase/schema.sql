@@ -1,6 +1,6 @@
 -- ====================================================================
 -- AtchuJobs Database Schema (Supabase PostgreSQL)
--- Atchuthapuram Mandal, Anakapalli District, Andhra Pradesh
+-- Atchuthapuram Local Job Portal
 -- ====================================================================
 
 -- 1. Enable UUID Extension
@@ -48,13 +48,10 @@ END $$;
 -- 3. Master Data Tables: Villages & Job Categories
 -- ====================================================================
 
--- Villages in Atchuthapuram Mandal
+-- Villages in Atchuthapuram
 CREATE TABLE IF NOT EXISTS public.villages (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     name VARCHAR(100) NOT NULL UNIQUE,
-    name_te VARCHAR(100) NOT NULL,
-    mandal VARCHAR(100) DEFAULT 'Atchuthapuram',
-    district VARCHAR(100) DEFAULT 'Anakapalli',
     pin_code VARCHAR(10) DEFAULT '531011',
     is_active BOOLEAN DEFAULT TRUE,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
@@ -65,7 +62,6 @@ CREATE TABLE IF NOT EXISTS public.job_categories (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     slug VARCHAR(100) NOT NULL UNIQUE,
     name VARCHAR(100) NOT NULL UNIQUE,
-    name_te VARCHAR(100) NOT NULL,
     description TEXT,
     icon VARCHAR(50) DEFAULT 'Briefcase',
     is_active BOOLEAN DEFAULT TRUE,
@@ -86,8 +82,6 @@ CREATE TABLE IF NOT EXISTS public.profiles (
     avatar_url TEXT,
     village_id UUID REFERENCES public.villages(id) ON DELETE SET NULL,
     village_name VARCHAR(100),
-    mandal VARCHAR(100) DEFAULT 'Atchuthapuram',
-    district VARCHAR(100) DEFAULT 'Anakapalli',
     
     -- Seeker specific fields
     headline VARCHAR(200),
@@ -122,11 +116,11 @@ CREATE TABLE IF NOT EXISTS public.employers (
     contact_email VARCHAR(255) NOT NULL,
     contact_phone VARCHAR(20) NOT NULL,
     
-    -- Physical location in Atchuthapuram / SEZ
+    -- Physical location in Atchuthapuram / Industrial Zone
     address TEXT NOT NULL,
     village_id UUID REFERENCES public.villages(id) ON DELETE SET NULL,
     village_name VARCHAR(100) NOT NULL,
-    sez_zone VARCHAR(150), -- e.g., 'APSEZ Atchuthapuram Sector 2', 'Brandix India Apparel City'
+    sez_zone VARCHAR(150), -- e.g., 'Atchuthapuram Sector 2', 'Brandix India Apparel City'
     pincode VARCHAR(10) DEFAULT '531011',
     
     -- Verification details
@@ -165,7 +159,6 @@ CREATE TABLE IF NOT EXISTS public.jobs (
     village_id UUID NOT NULL REFERENCES public.villages(id) ON DELETE RESTRICT,
     
     title VARCHAR(200) NOT NULL,
-    title_te VARCHAR(200),
     description TEXT NOT NULL,
     responsibilities TEXT[],
     requirements TEXT[],
@@ -280,9 +273,7 @@ CREATE TABLE IF NOT EXISTS public.notifications (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     user_id UUID NOT NULL REFERENCES public.profiles(id) ON DELETE CASCADE,
     title VARCHAR(200) NOT NULL,
-    title_te VARCHAR(200),
     message TEXT NOT NULL,
-    message_te TEXT,
     type VARCHAR(50) DEFAULT 'general', -- 'application_update', 'interview_scheduled', 'job_approved', 'job_rejected', 'employer_verified', 'report_update'
     link TEXT,
     is_read BOOLEAN DEFAULT FALSE,
@@ -467,45 +458,46 @@ CREATE TRIGGER on_auth_user_created
     FOR EACH ROW EXECUTE FUNCTION public.handle_new_user();
 
 -- ====================================================================
--- 14. SEED DATA FOR ATCHUTHAPURAM MANDAL
+-- 14. SEED DATA FOR ATCHUTHAPURAM
 -- ====================================================================
 
--- Insert Official Villages in Atchuthapuram Mandal
-INSERT INTO public.villages (name, name_te, mandal, district, pin_code) VALUES
-('Atchuthapuram', 'అచ్యుతాపురం', 'Atchuthapuram', 'Anakapalli', '531011'),
-('Haripalem', 'హరిపాలెం', 'Atchuthapuram', 'Anakapalli', '531011'),
-('Duppituru', 'దుప్పిటూరు', 'Atchuthapuram', 'Anakapalli', '531011'),
-('Kondakarla', 'కొండకర్ల', 'Atchuthapuram', 'Anakapalli', '531033'),
-('Maduturu', 'మడుతూరు', 'Atchuthapuram', 'Anakapalli', '531011'),
-('Pudimadaka', 'పూడిమడక', 'Atchuthapuram', 'Anakapalli', '531011'),
-('Veduruvada', 'వెదురువాడ', 'Atchuthapuram', 'Anakapalli', '531011'),
-('Somavaram', 'సోమవరం', 'Atchuthapuram', 'Anakapalli', '531011'),
-('Thimmarajupeta', 'తిమ్మరాజుపేట', 'Atchuthapuram', 'Anakapalli', '531011'),
-('Yellapuvanipalem', 'ఎల్లపువానిపాలెం', 'Atchuthapuram', 'Anakapalli', '531011'),
-('Dibbapalem', 'దిబ్బపాలెం', 'Atchuthapuram', 'Anakapalli', '531011'),
-('Dosuru', 'దోసూరు', 'Atchuthapuram', 'Anakapalli', '531011'),
-('Ugginapalem', 'ఉగ్గినపాలెం', 'Atchuthapuram', 'Anakapalli', '531011'),
-('Moturupalem', 'మోటురుపాలెం', 'Atchuthapuram', 'Anakapalli', '531011'),
-('Nukalapalem', 'నూకాలపాలెం', 'Atchuthapuram', 'Anakapalli', '531011'),
-('Tantadi', 'తంతడి', 'Atchuthapuram', 'Anakapalli', '531011'),
-('Pedapadu', 'పెదపాడు', 'Atchuthapuram', 'Anakapalli', '531011'),
-('Chodapalle', 'చోడపల్లె', 'Atchuthapuram', 'Anakapalli', '531011'),
-('Rayavaram', 'రాయవరం', 'Atchuthapuram', 'Anakapalli', '531011'),
-('Jaggannapeta', 'జగ్గన్నపేట', 'Atchuthapuram', 'Anakapalli', '531011')
+-- Insert Official Villages in Atchuthapuram
+INSERT INTO public.villages (name, pin_code) VALUES
+('Atchuthapuram', '531011'),
+('Haripalem', '531011'),
+('Duppituru', '531011'),
+('Kondakarla', '531033'),
+('Maduturu', '531011'),
+('Pudimadaka', '531011'),
+('Veduruvada', '531011'),
+('Somavaram', '531011'),
+('Thimmarajupeta', '531011'),
+('Yellapuvanipalem', '531011'),
+('Dibbapalem', '531011'),
+('Dosuru', '531011'),
+('Ugginapalem', '531011'),
+('Moturupalem', '531011'),
+('Nukalapalem', '531011'),
+('Tantadi', '531011'),
+('Pedapadu', '531011'),
+('Chodapalle', '531011'),
+('Rayavaram', '531011'),
+('Jaggannapeta', '531011')
 ON CONFLICT (name) DO NOTHING;
 
 -- Insert 12 Local Job Categories
-INSERT INTO public.job_categories (slug, name, name_te, description, icon, display_order) VALUES
-('manufacturing', 'Manufacturing', 'తయారీ రంగం', 'Factory production, machine operators, assembly line, SEZ manufacturing', 'Factory', 1),
-('it-computer', 'IT and Computer', 'ఐటీ మరియు కంప్యూటర్', 'Data entry, software support, network technician, IT operations', 'Laptop', 2),
-('engineering', 'Engineering', 'ఇంజనీరింగ్', 'Mechanical, Electrical, Instrumentation, Chemical engineers', 'Wrench', 3),
-('pharma', 'Pharma', 'ఫార్మా రంగం', 'Quality Control, QA, Formulation, Chemical synthesis in APSEZ Pharma cluster', 'Pill', 4),
-('office-administration', 'Office Administration', 'ఆఫీస్ అడ్మినిస్ట్రేషన్', 'Back office, front desk, HR coordinators, file managers', 'Building2', 5),
-('accounting', 'Accounting', 'ఖాతాలు మరియు అకౌంటింగ్', 'Tally operators, billing clerks, tax assistants, store bookkeepers', 'Calculator', 6),
-('security', 'Security', 'సెక్యూరిటీ మరియు భద్రత', 'Industrial security guards, supervisors, CCTV surveillance', 'ShieldCheck', 7),
-('transportation', 'Transportation', 'రవాణా మరియు లాజిస్టిక్స్', 'Heavy vehicle drivers, forklift operators, dispatch coordinators', 'Truck', 8),
-('education', 'Education', 'విద్య మరియు శిక్షణ', 'Local school teachers, tutors, industrial training apprentices', 'GraduationCap', 9),
-('healthcare', 'Healthcare', 'వైద్యం మరియు ఆరోగ్య సంరక్షణ', 'Staff nurses, lab technicians, pharmacy assistants, first aid responders', 'Stethoscope', 10),
-('skilled-workers', 'Skilled Workers', 'నైపుణ్యం కలిగిన కార్మికులు', 'Electricians, fitters, welders, CNC machinists, plumbers', 'Hammer', 11),
-('general-labour', 'General Labour', 'జనరల్ లేబర్', 'Packaging workers, warehouse helpers, loading/unloading staff', 'Users', 12)
+INSERT INTO public.job_categories (slug, name, description, icon, display_order) VALUES
+('manufacturing', 'Manufacturing', 'Factory production, machine operators, assembly line, industrial manufacturing', 'Factory', 1),
+('it-computer', 'IT and Computer', 'Data entry, software support, network technician, IT operations', 'Laptop', 2),
+('engineering', 'Engineering', 'Mechanical, Electrical, Instrumentation, Chemical engineers', 'Wrench', 3),
+('pharma', 'Pharma', 'Quality Control, QA, Formulation, Chemical synthesis in Pharma cluster', 'Pill', 4),
+('office-administration', 'Office Administration', 'Back office, front desk, HR coordinators, file managers', 'Building2', 5),
+('accounting', 'Accounting', 'Tally operators, billing clerks, tax assistants, store bookkeepers', 'Calculator', 6),
+('security', 'Security', 'Industrial security guards, supervisors, CCTV surveillance', 'ShieldCheck', 7),
+('transportation', 'Transportation', 'Heavy vehicle drivers, forklift operators, dispatch coordinators', 'Truck', 8),
+('education', 'Education', 'Local school teachers, tutors, industrial training apprentices', 'GraduationCap', 9),
+('healthcare', 'Healthcare', 'Staff nurses, lab technicians, pharmacy assistants, first aid responders', 'Stethoscope', 10),
+('skilled-workers', 'Skilled Workers', 'Electricians, fitters, welders, CNC machinists, plumbers', 'Hammer', 11),
+('general-labour', 'General Labour', 'Packaging workers, warehouse helpers, loading/unloading staff', 'Users', 12)
 ON CONFLICT (slug) DO NOTHING;
+

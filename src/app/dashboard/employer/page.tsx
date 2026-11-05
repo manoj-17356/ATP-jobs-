@@ -72,7 +72,7 @@ export default function EmployerDashboardPage() {
   const [newHasCanteen, setNewHasCanteen] = useState(true);
   const [newHasEsiPf, setNewHasEsiPf] = useState(true);
   const [newWorkLocation, setNewWorkLocation] = useState(
-    'APSEZ Atchuthapuram Corridor, Anakapalli Dist'
+    'Atchuthapuram Industrial Corridor'
   );
   const [newDescription, setNewDescription] = useState('');
   const [newSkills, setNewSkills] = useState('Machine Operation, Safety Protocols, Quality Inspection');
@@ -131,7 +131,7 @@ export default function EmployerDashboardPage() {
       requirements: [
         `Education: ${newEducation}`,
         `Experience: ${newExperience}`,
-        'Preference for residents of Atchuthapuram Mandal',
+        'Preference for residents of Atchuthapuram',
       ],
       skills_required: skillsArray,
       job_type: newJobType,
@@ -169,7 +169,7 @@ export default function EmployerDashboardPage() {
       if (app) {
         setSchedulingApp(app);
         setInterviewLocation(
-          `${currentEmp?.company_name}, ${currentEmp?.address || 'APSEZ Atchuthapuram Sector 2'}`
+          `${currentEmp?.company_name}, ${currentEmp?.address || 'Atchuthapuram Sector 2'}`
         );
         return;
       }
@@ -246,7 +246,7 @@ export default function EmployerDashboardPage() {
 
             <p className="text-xs sm:text-sm text-slate-600 mt-1 font-medium">
               {currentEmp?.industry || 'Pharmaceutical Manufacturing'} •{' '}
-              {currentEmp?.sez_zone || 'APSEZ Atchuthapuram'}
+              {currentEmp?.sez_zone || 'Atchuthapuram Industrial Area'}
             </p>
 
             <div className="flex flex-wrap items-center gap-3 mt-2 text-xs text-slate-500">
@@ -332,7 +332,7 @@ export default function EmployerDashboardPage() {
               <Briefcase className="w-10 h-10 text-slate-300 mx-auto" />
               <h3 className="font-bold text-navy-950 text-base">No Vacancies Posted Yet</h3>
               <p className="text-xs text-slate-500 max-w-sm mx-auto">
-                Reach genuine local candidates across Atchuthapuram Mandal.
+                Reach genuine local candidates across Atchuthapuram.
               </p>
               <button
                 onClick={() => setActiveTab('post-job')}
@@ -568,10 +568,10 @@ export default function EmployerDashboardPage() {
         <div className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 space-y-6">
           <div className="border-b border-slate-100 pb-4">
             <h2 className="text-lg font-bold text-navy-950">
-              Post Vacancy in Atchuthapuram Mandal
+              Post Vacancy in Atchuthapuram
             </h2>
             <p className="text-xs text-slate-500">
-              Reach local village residents. All postings undergo review by the mandal moderation desk.
+              Reach local village residents. All postings undergo review by the moderation desk.
             </p>
           </div>
 
@@ -591,33 +591,18 @@ export default function EmployerDashboardPage() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-xs font-bold text-slate-800 mb-1">
-                  Job Title (English) <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  required
-                  value={newTitle}
-                  onChange={(e) => setNewTitle(e.target.value)}
-                  placeholder="e.g. Senior QC Chemist / CNC Machine Operator"
-                  className="w-full text-xs border border-slate-300 rounded-xl px-3 py-2.5 focus:ring-2 focus:ring-blue-600"
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold text-slate-800 mb-1">
-                  Job Title (Telugu translation, optional)
-                </label>
-                <input
-                  type="text"
-                  value={newTitleTe}
-                  onChange={(e) => setNewTitleTe(e.target.value)}
-                  placeholder="ఉదా: క్వాలిటీ కంట్రోల్ కెమిస్ట్"
-                  className="w-full text-xs border border-slate-300 rounded-xl px-3 py-2.5 focus:ring-2 focus:ring-blue-600"
-                />
-              </div>
+            <div>
+              <label className="block text-xs font-bold text-slate-800 mb-1">
+                Job Title <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                required
+                value={newTitle}
+                onChange={(e) => setNewTitle(e.target.value)}
+                placeholder="e.g. Senior QC Chemist / CNC Machine Operator"
+                className="w-full text-xs border border-slate-300 rounded-xl px-3 py-2.5 focus:ring-2 focus:ring-blue-600"
+              />
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -632,7 +617,7 @@ export default function EmployerDashboardPage() {
                 >
                   {JOB_CATEGORIES.map((c) => (
                     <option key={c.id} value={c.id}>
-                      {c.name} ({c.name_te})
+                      {c.name}
                     </option>
                   ))}
                 </select>
@@ -649,7 +634,7 @@ export default function EmployerDashboardPage() {
                 >
                   {ATCHUTHAPURAM_VILLAGES.map((v) => (
                     <option key={v.id} value={v.name}>
-                      {v.name} ({v.name_te})
+                      {v.name}
                     </option>
                   ))}
                 </select>
@@ -822,7 +807,7 @@ export default function EmployerDashboardPage() {
           {docUploadSuccess && (
             <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-xl text-xs font-semibold text-emerald-800 flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-              Document uploaded! Mandal moderation desk will review within 24 hours.
+              Document uploaded! Moderation desk will review within 24 hours.
             </div>
           )}
 
@@ -891,9 +876,9 @@ export default function EmployerDashboardPage() {
                 >
                   <option value="gstin">GSTIN Certificate (Goods & Service Tax)</option>
                   <option value="pan">Company PAN Card</option>
-                  <option value="factory_license">AP Factory Inspectorate License</option>
+                  <option value="factory_license">Factory Inspectorate License</option>
                   <option value="incorporation_certificate">Certificate of Incorporation</option>
-                  <option value="trade_license">Gram Panchayat / Mandal Trade License</option>
+                  <option value="trade_license">Local Panchayat Trade License</option>
                 </select>
               </div>
 
@@ -988,7 +973,7 @@ export default function EmployerDashboardPage() {
                   required
                   value={interviewLocation}
                   onChange={(e) => setInterviewLocation(e.target.value)}
-                  placeholder="e.g. APSEZ Sector 2 Plant, Gate 1 Security Desk"
+                  placeholder="e.g. Sector 2 Plant, Gate 1 Security Desk"
                   className="w-full text-xs border border-slate-300 rounded-xl px-3 py-2"
                 />
               </div>

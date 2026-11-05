@@ -137,3 +137,4 @@ export function updateApplicationStatus(
   saveStoredApplications(all);
   return true;
 }
+

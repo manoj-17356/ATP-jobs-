@@ -130,3 +130,4 @@ export function addAuditLog(log: Omit<AuditLog, 'id' | 'created_at'>) {
     localStorage.setItem(AUDIT_LOGS_KEY, JSON.stringify(logs));
   }
 }
+

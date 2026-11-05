@@ -48,7 +48,7 @@ const categoryIconMap: Record<string, any> = {
 };
 
 export default function HomePage() {
-  const { language, t } = useLanguage();
+  const { t } = useLanguage();
   const [jobs, setJobs] = useState<Job[]>([]);
   const [employers, setEmployers] = useState<Employer[]>([]);
 
@@ -59,19 +59,16 @@ export default function HomePage() {
 
   return (
     <div className="space-y-16 pb-20">
-      {/* 1. HERO SECTION (Navy Blue Gradient + Clean White Cards) */}
+      {/* 1. HERO SECTION */}
       <section className="relative bg-gradient-to-b from-navy-950 via-navy-900 to-navy-950 text-white pt-14 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        {/* Subtle decorative glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-blue-600/10 blur-[120px] pointer-events-none rounded-full" />
 
         <div className="max-w-5xl mx-auto text-center space-y-6 relative z-10">
-          {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 text-blue-300 text-xs font-semibold backdrop-blur-sm">
             <Sparkles className="w-3.5 h-3.5 text-blue-400" />
-            <span>Exclusively for Atchuthapuram Mandal, Anakapalli Dist</span>
+            <span>Exclusively for Atchuthapuram</span>
           </div>
 
-          {/* Heading & Tagline */}
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight sm:leading-none text-white">
             {t.heroHeading}
           </h1>
@@ -80,12 +77,10 @@ export default function HomePage() {
             {t.heroSubheading}
           </p>
 
-          {/* Search Bar Component */}
           <div className="pt-4 max-w-4xl mx-auto">
             <JobSearchBar />
           </div>
 
-          {/* Key Assurance Badges */}
           <div className="pt-4 flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs text-slate-300">
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-emerald-400" />
@@ -97,7 +92,7 @@ export default function HomePage() {
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="w-4 h-4 text-blue-400" />
-              <span>20 Mandal Villages Covered</span>
+              <span>20 Local Villages Covered</span>
             </div>
           </div>
         </div>
@@ -147,10 +142,10 @@ export default function HomePage() {
           <div className="space-y-2 max-w-2xl">
             <div className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-300 uppercase tracking-wider bg-amber-400/10 px-2.5 py-1 rounded-md">
               <Award className="w-3.5 h-3.5" />
-              Mandal Candidate Protection Policy
+              Candidate Protection Policy
             </div>
             <h3 className="text-xl sm:text-2xl font-bold leading-tight">
-              Never Pay Any Money for Jobs in Atchuthapuram Mandal
+              Never Pay Any Money for Jobs in Atchuthapuram
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
               AtchuJobs enforces a strict zero-tolerance mandate. If any recruiter or agency asks for application fees, medical test deposits, or gate pass money, report them instantly. Our admin moderation desk investigates within 2 hours.
@@ -178,7 +173,7 @@ export default function HomePage() {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
           <div>
             <div className="text-xs font-bold text-blue-600 uppercase tracking-wider">
-              APSEZ & Local Mandal Openings
+              Industrial & Local Openings
             </div>
             <h2 className="text-2xl sm:text-3xl font-black text-navy-950 mt-1">
               {t.secFeaturedJobs}
@@ -247,9 +242,6 @@ export default function HomePage() {
                     <h3 className="font-bold text-sm text-navy-950 group-hover:text-blue-600 transition">
                       {cat.name}
                     </h3>
-                    <p className="text-xs font-medium text-slate-500 mt-0.5">
-                      {cat.name_te}
-                    </p>
                     <p className="text-[11px] text-slate-500 mt-2 line-clamp-2 leading-relaxed">
                       {cat.description}
                     </p>
@@ -336,18 +328,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7. ATCHUTHAPURAM MANDAL VILLAGES DIRECTORY */}
+      {/* 7. ATCHUTHAPURAM VILLAGES DIRECTORY */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-navy-900 text-white rounded-3xl p-8 sm:p-10 shadow-xl border border-navy-800">
           <div className="max-w-2xl mb-8">
             <span className="text-xs font-bold text-amber-400 uppercase tracking-wider">
-              Hyper-Local Mandal Network
+              Local Network
             </span>
             <h2 className="text-2xl sm:text-3xl font-black mt-1">
               {t.secVillagesCovered}
             </h2>
             <p className="text-xs sm:text-sm text-slate-300 mt-2">
-              Candidates residing in these villages receive priority recruitment routing and bus facility matching from APSEZ and BIAC employers.
+              Candidates residing in these villages receive priority recruitment routing and bus facility matching from industrial employers.
             </p>
           </div>
 
@@ -362,14 +354,14 @@ export default function HomePage() {
                   {v.name}
                 </div>
                 <div className="text-[11px] text-slate-400 group-hover:text-blue-100 truncate">
-                  {v.name_te}
+                  PIN {v.pin_code}
                 </div>
               </Link>
             ))}
           </div>
 
           <div className="mt-8 pt-6 border-t border-navy-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-            <span>Anakapalli District, Andhra Pradesh • PIN 531011</span>
+            <span>PIN 531011</span>
             <Link
               href="/villages"
               className="text-amber-400 font-bold hover:underline inline-flex items-center gap-1"
@@ -390,7 +382,7 @@ export default function HomePage() {
             Start Your Career or Recruit Local Talent Today
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-xl mx-auto">
-            Join thousands of residents in Atchuthapuram Mandal who connect with verified employers without paying single rupee in fees.
+            Join thousands of residents in Atchuthapuram who connect with verified employers without paying single rupee in fees.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
             <Link

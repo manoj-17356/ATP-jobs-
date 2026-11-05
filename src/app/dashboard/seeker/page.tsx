@@ -165,7 +165,7 @@ export default function SeekerDashboardPage() {
             <div className="flex flex-wrap items-center gap-3 mt-2 text-xs text-slate-500">
               <span className="flex items-center gap-1 text-slate-700">
                 <MapPin className="w-3.5 h-3.5 text-red-500" />
-                {user?.village_name || 'Haripalem'}, Atchuthapuram Mandal
+                {user?.village_name || 'Haripalem'}, Atchuthapuram
               </span>
               <span>•</span>
               <span>{user?.phone || '+91 98480 12345'}</span>
@@ -413,7 +413,7 @@ export default function SeekerDashboardPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-bold text-slate-700 mb-1">
-                    Village in Atchuthapuram Mandal
+                    Village in Atchuthapuram
                   </label>
                   <select
                     value={villageName}
@@ -422,7 +422,7 @@ export default function SeekerDashboardPage() {
                   >
                     {ATCHUTHAPURAM_VILLAGES.map((v) => (
                       <option key={v.id} value={v.name}>
-                        {v.name} ({v.name_te})
+                        {v.name}
                       </option>
                     ))}
                   </select>
@@ -542,7 +542,7 @@ export default function SeekerDashboardPage() {
                   About Me
                 </h4>
                 <p className="text-slate-700 leading-relaxed bg-slate-50 p-4 rounded-xl border border-slate-100">
-                  {user?.bio || 'Native resident of Atchuthapuram Mandal seeking genuine local career opportunities.'}
+                  {user?.bio || 'Native resident of Atchuthapuram seeking genuine local career opportunities.'}
                 </p>
               </div>
 
@@ -571,7 +571,7 @@ export default function SeekerDashboardPage() {
                 <div className="space-y-2">
                   {(user?.education && user.education.length > 0 ? user.education : [
                     {
-                      institution: 'Govt Degree College, Anakapalli',
+                      institution: 'Govt Degree College',
                       degree: 'B.Sc Chemistry',
                       year: '2022',
                       field: 'Chemistry & Biology',
@@ -653,3 +653,4 @@ export default function SeekerDashboardPage() {
     </div>
   );
 }
+

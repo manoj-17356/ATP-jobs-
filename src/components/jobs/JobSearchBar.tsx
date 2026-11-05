@@ -76,7 +76,7 @@ export default function JobSearchBar({
               <option value="all">{t.allVillages}</option>
               {ATCHUTHAPURAM_VILLAGES.map((v) => (
                 <option key={v.id} value={v.name}>
-                  {language === 'te' ? v.name_te : v.name}
+                  {v.name}
                 </option>
               ))}
             </select>
@@ -97,7 +97,7 @@ export default function JobSearchBar({
               <option value="all">{t.allCategories}</option>
               {JOB_CATEGORIES.map((c) => (
                 <option key={c.id} value={c.slug}>
-                  {language === 'te' ? c.name_te : c.name}
+                  {c.name}
                 </option>
               ))}
             </select>
@@ -139,3 +139,4 @@ export default function JobSearchBar({
     </div>
   );
 }
+

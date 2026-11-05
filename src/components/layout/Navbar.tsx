@@ -9,14 +9,11 @@ import { INITIAL_NOTIFICATIONS } from '@/lib/data/sample-data';
 import {
   Briefcase,
   Bell,
-  Globe,
   Menu,
   X,
   User,
   Shield,
   Building,
-  CheckCircle2,
-  ChevronDown,
   LogOut,
   MapPin,
   Sparkles,
@@ -25,7 +22,7 @@ import {
 export default function Navbar() {
   const pathname = usePathname();
   const { user, role, loginAs, logout } = useAuth();
-  const { language, setLanguage, t } = useLanguage();
+  const { t } = useLanguage();
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
@@ -52,19 +49,19 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
-      {/* Top Mandal Notification Bar & Tester Role Switcher */}
+      {/* Top Bar with Local Badge & Quick Persona Switcher */}
       <div className="bg-navy-950 text-slate-300 text-xs px-4 py-1.5 flex flex-wrap items-center justify-between gap-2 border-b border-navy-800">
         <div className="flex items-center gap-2">
           <span className="inline-flex items-center gap-1 font-medium text-emerald-400 bg-emerald-950/60 border border-emerald-800 px-2 py-0.5 rounded-full">
             <MapPin className="w-3 h-3 text-emerald-400" />
-            Atchuthapuram Mandal Exclusive
+            Atchuthapuram Local Jobs
           </span>
           <span className="hidden sm:inline text-slate-400">
-            {t.mandalNotice}
+            {t.notice}
           </span>
         </div>
 
-        {/* Quick Demo Role Switcher for instant pair-programming / evaluation */}
+        {/* Quick Demo Role Switcher */}
         <div className="flex items-center gap-1.5 text-[11px]">
           <span className="text-slate-400 hidden md:inline">Test Persona:</span>
           <button
@@ -97,17 +94,6 @@ export default function Navbar() {
           >
             Admin
           </button>
-
-          {/* Telugu / English Toggle */}
-          <div className="ml-2 pl-2 border-l border-navy-800 flex items-center gap-1">
-            <Globe className="w-3 h-3 text-slate-400" />
-            <button
-              onClick={() => setLanguage(language === 'en' ? 'te' : 'en')}
-              className="text-amber-300 font-semibold hover:underline"
-            >
-              {language === 'en' ? 'తెలుగు' : 'English'}
-            </button>
-          </div>
         </div>
       </div>
 
@@ -207,10 +193,10 @@ export default function Navbar() {
                           }`}
                         >
                           <div className="font-semibold text-slate-900 mb-0.5">
-                            {language === 'te' && n.title_te ? n.title_te : n.title}
+                            {n.title}
                           </div>
                           <p className="text-slate-600 line-clamp-2">
-                            {language === 'te' && n.message_te ? n.message_te : n.message}
+                            {n.message}
                           </p>
                           <span className="text-[10px] text-slate-400 mt-1 inline-block">
                             {new Date(n.created_at).toLocaleDateString()}

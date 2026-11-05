@@ -30,7 +30,7 @@ function RegisterForm() {
   const [industry, setIndustry] = useState('Manufacturing / SEZ');
   const [employerVillage, setEmployerVillage] = useState('Atchuthapuram');
   const [address, setAddress] = useState('');
-  const [sezZone, setSezZone] = useState('APSEZ Atchuthapuram Sector 2');
+  const [sezZone, setSezZone] = useState('SEZ Sector 2');
   const [agreedNoFee, setAgreedNoFee] = useState(true);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -81,7 +81,7 @@ function RegisterForm() {
             Create an AtchuJobs Account
           </h2>
           <p className="text-xs text-slate-500">
-            Connect directly with verified local opportunities in Atchuthapuram Mandal
+            Connect directly with verified local opportunities in Atchuthapuram
           </p>
         </div>
 
@@ -118,7 +118,7 @@ function RegisterForm() {
           <form onSubmit={handleSeekerSubmit} className="space-y-4">
             <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-xl text-[11px] text-emerald-800 flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-              <span>100% Free registration. Free application access across all mandal employers.</span>
+              <span>100% Free registration. Free application access across all local employers.</span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -168,7 +168,7 @@ function RegisterForm() {
 
               <div>
                 <label className="block text-xs font-bold text-slate-700 mb-1">
-                  Home Village (Atchuthapuram Mandal) <span className="text-red-500">*</span>
+                  Home Village (Atchuthapuram) <span className="text-red-500">*</span>
                 </label>
                 <select
                   value={seekerVillage}
@@ -177,7 +177,7 @@ function RegisterForm() {
                 >
                   {ATCHUTHAPURAM_VILLAGES.map((v) => (
                     <option key={v.id} value={v.name}>
-                      {v.name} ({v.name_te})
+                      {v.name}
                     </option>
                   ))}
                 </select>
@@ -192,7 +192,7 @@ function RegisterForm() {
                 type="text"
                 value={seekerHeadline}
                 onChange={(e) => setSeekerHeadline(e.target.value)}
-                placeholder="e.g. ITI Fitter • Looking for SEZ Manufacturing Shift Work"
+                placeholder="e.g. ITI Fitter • Looking for Manufacturing Shift Work"
                 className="w-full text-xs border border-slate-300 rounded-xl px-3 py-2.5 focus:ring-2 focus:ring-blue-600 focus:outline-none"
               />
             </div>
@@ -293,7 +293,7 @@ function RegisterForm() {
 
               <div>
                 <label className="block text-xs font-bold text-slate-700 mb-1">
-                  Village / Location in Mandal
+                  Village / Location
                 </label>
                 <select
                   value={employerVillage}
@@ -302,7 +302,7 @@ function RegisterForm() {
                 >
                   {ATCHUTHAPURAM_VILLAGES.map((v) => (
                     <option key={v.id} value={v.name}>
-                      {v.name} ({v.name_te})
+                      {v.name}
                     </option>
                   ))}
                 </select>
@@ -317,7 +317,7 @@ function RegisterForm() {
                 type="text"
                 value={sezZone}
                 onChange={(e) => setSezZone(e.target.value)}
-                placeholder="e.g. APSEZ Sector 2 / BIAC / Industrial Area"
+                placeholder="e.g. SEZ Sector 2 / BIAC / Industrial Area"
                 className="w-full text-xs border border-slate-300 rounded-xl px-3 py-2.5"
               />
             </div>
@@ -331,7 +331,7 @@ function RegisterForm() {
                 required
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
-                placeholder="Plot No., Survey No., Road name, Atchuthapuram Mandal"
+                placeholder="Plot No., Survey No., Road name, Atchuthapuram"
                 className="w-full text-xs border border-slate-300 rounded-xl px-3 py-2.5"
               />
             </div>

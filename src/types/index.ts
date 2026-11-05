@@ -21,9 +21,7 @@ export type JobType = 'Full-time' | 'Shift-based' | 'Contract' | 'Part-time' | '
 export interface Village {
   id: string;
   name: string;
-  name_te: string;
-  mandal: string;
-  district: string;
+  name_te?: string;
   pin_code: string;
   is_active: boolean;
 }
@@ -32,7 +30,7 @@ export interface JobCategory {
   id: string;
   slug: string;
   name: string;
-  name_te: string;
+  name_te?: string;
   description: string;
   icon: string;
   is_active: boolean;
@@ -62,8 +60,6 @@ export interface UserProfile {
   avatar_url?: string;
   village_id?: string;
   village_name?: string;
-  mandal?: string;
-  district?: string;
   
   // Job seeker profile fields
   headline?: string;

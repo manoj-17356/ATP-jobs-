@@ -75,7 +75,7 @@ export default function AdminDashboardPage() {
 
   // Job Moderation Handlers
   const handleApproveJob = (jobId: string) => {
-    updateJobStatus(jobId, 'active', reviewNote || 'Approved after mandal location & wage check.');
+    updateJobStatus(jobId, 'active', reviewNote || 'Approved after location & wage check.');
     refreshAllData();
     showSuccess('Job approved and published to the live portal!');
     setReviewNote('');
@@ -105,7 +105,7 @@ export default function AdminDashboardPage() {
   const handleSuspendEmployer = (empId: string, companyName: string) => {
     const reason = prompt(
       `Enter reason for suspending ${companyName} (e.g. demanding registration fee from candidates):`,
-      'Fraudulent fee collection reported in Atchuthapuram Mandal'
+      'Fraudulent fee collection reported in Atchuthapuram'
     );
     if (!reason) return;
 
@@ -140,14 +140,14 @@ export default function AdminDashboardPage() {
           <div>
             <div className="flex items-center gap-2">
               <h1 className="text-xl sm:text-2xl font-black">
-                AtchuJobs Mandal Administration Desk
+                AtchuJobs Administration Desk
               </h1>
               <span className="text-[10px] uppercase font-bold text-emerald-400 bg-emerald-950/80 border border-emerald-700 px-2 py-0.5 rounded-full">
                 Admin Control
               </span>
             </div>
             <p className="text-xs sm:text-sm text-slate-300 mt-1">
-              Atchuthapuram Mandal • Anakapalli District • Anti-Fraud & Moderation Hub
+              Atchuthapuram • Anti-Fraud & Moderation Hub
             </p>
           </div>
         </div>
@@ -247,7 +247,7 @@ export default function AdminDashboardPage() {
           }`}
         >
           <MapPin className="w-4 h-4" />
-          Mandal Villages & Categories
+          Villages & Categories
         </button>
       </div>
 
@@ -339,7 +339,7 @@ export default function AdminDashboardPage() {
             <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs">
               <h3 className="font-bold text-sm text-navy-950 mb-4 flex items-center justify-between">
                 <span>Jobs by Village</span>
-                <span className="text-xs font-normal text-slate-500">Atchuthapuram Mandal</span>
+                <span className="text-xs font-normal text-slate-500">Atchuthapuram</span>
               </h3>
               <div className="space-y-2.5">
                 {analytics.jobsByVillage.slice(0, 6).map((vil) => (
@@ -372,7 +372,7 @@ export default function AdminDashboardPage() {
               Pending Job Moderation Queue ({pendingJobsList.length})
             </h2>
             <p className="text-xs text-slate-500">
-              Every job posting is reviewed for genuine workplace, realistic salary, zero-fee compliance, and mandal geography.
+              Every job posting is reviewed for genuine workplace, realistic salary, zero-fee compliance, and local geography.
             </p>
           </div>
 
@@ -532,14 +532,14 @@ export default function AdminDashboardPage() {
               Candidate Fraud Reports & Fee Violations ({reports.length})
             </h2>
             <p className="text-xs text-slate-500">
-              Investigate reports filed by job seekers in Atchuthapuram Mandal regarding fake recruiters, fee demands, or fake addresses.
+              Investigate reports filed by job seekers in Atchuthapuram regarding fake recruiters, fee demands, or fake addresses.
             </p>
           </div>
 
           {reports.length === 0 ? (
             <div className="bg-white rounded-2xl border border-slate-200 p-12 text-center space-y-3">
               <CheckCircle2 className="w-12 h-12 text-emerald-500 mx-auto" />
-              <h3 className="font-bold text-navy-950 text-base">Clean Mandal Record</h3>
+              <h3 className="font-bold text-navy-950 text-base">Clean Record</h3>
               <p className="text-xs text-slate-500 max-w-sm mx-auto">
                 No reported violations currently pending.
               </p>
@@ -610,7 +610,7 @@ export default function AdminDashboardPage() {
               Immutable Moderation & Audit Trail
             </h2>
             <p className="text-xs text-slate-500">
-              Audit log of all admin approvals, suspensions, and verifications in Atchuthapuram Mandal.
+              Audit log of all admin approvals, suspensions, and verifications in Atchuthapuram.
             </p>
           </div>
 
@@ -660,7 +660,7 @@ export default function AdminDashboardPage() {
           <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs space-y-4">
             <div className="flex items-center justify-between">
               <h3 className="font-bold text-sm text-navy-950">
-                Official Villages in Atchuthapuram Mandal ({ATCHUTHAPURAM_VILLAGES.length})
+                Official Villages in Atchuthapuram ({ATCHUTHAPURAM_VILLAGES.length})
               </h3>
               <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
                 PIN 531011
@@ -671,7 +671,6 @@ export default function AdminDashboardPage() {
                 <div key={v.id} className="py-2.5 flex items-center justify-between">
                   <div>
                     <span className="font-bold text-slate-900">{v.name}</span>
-                    <span className="text-slate-500 ml-2">({v.name_te})</span>
                   </div>
                   <span className="inline-flex items-center gap-1 text-[10px] text-emerald-600 font-semibold">
                     <CheckCircle2 className="w-3 h-3" /> Active
@@ -691,7 +690,6 @@ export default function AdminDashboardPage() {
                 <div key={cat.id} className="py-2.5 flex items-center justify-between">
                   <div>
                     <span className="font-bold text-slate-900">{cat.name}</span>
-                    <span className="text-slate-500 ml-2">({cat.name_te})</span>
                   </div>
                   <span className="font-mono text-[10px] text-slate-400">{cat.slug}</span>
                 </div>
@@ -703,3 +701,4 @@ export default function AdminDashboardPage() {
     </div>
   );
 }
+

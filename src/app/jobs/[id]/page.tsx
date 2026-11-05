@@ -133,13 +133,13 @@ export default function JobDetailPage() {
               </div>
 
               <h1 className="text-xl sm:text-2xl font-black text-navy-950 leading-tight">
-                {language === 'te' && job.title_te ? job.title_te : job.title}
+                {job.title}
               </h1>
 
               <div className="flex flex-wrap items-center gap-3 mt-2 text-xs text-slate-500">
                 <span className="flex items-center gap-1 text-slate-700 font-medium">
                   <MapPin className="w-3.5 h-3.5 text-red-500" />
-                  {job.village_name}, Atchuthapuram Mandal
+                  {job.village_name}, Atchuthapuram
                 </span>
                 <span>•</span>
                 <span className="flex items-center gap-1">
@@ -216,7 +216,7 @@ export default function JobDetailPage() {
             {job.has_bus_facility && (
               <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 text-emerald-800 border border-emerald-200 rounded-xl font-semibold">
                 <Bus className="w-4 h-4 text-emerald-600" />
-                Free Bus Route (Atchuthapuram, Anakapalli, Vizag)
+                Free Bus Route (Atchuthapuram Local Routes)
               </span>
             )}
             {job.has_canteen_facility && (
@@ -305,7 +305,7 @@ export default function JobDetailPage() {
             {job.work_location}
           </p>
           <div className="text-[11px] text-slate-500">
-            Village: <strong>{job.village_name}</strong> • Mandal: <strong>Atchuthapuram</strong> • District: <strong>Anakapalli</strong>
+            Village: <strong>{job.village_name}</strong> • Location: <strong>Atchuthapuram</strong>
           </div>
         </div>
 
@@ -342,3 +342,4 @@ export default function JobDetailPage() {
     </div>
   );
 }
+

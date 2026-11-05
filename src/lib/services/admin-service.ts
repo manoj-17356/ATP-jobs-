@@ -93,3 +93,4 @@ export function getAdminAnalytics(): AdminAnalytics {
     applicationsByStatus,
   };
 }
+

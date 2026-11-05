@@ -1,14 +1,14 @@
 # 🏢 AtchuJobs – Local Job Portal
 ### *Local Jobs. Local Opportunities.*
-**Exclusively focused on Atchuthapuram Mandal, Anakapalli District, Andhra Pradesh**
+**Exclusively focused on Atchuthapuram**
 
 ---
 
 ## 📌 Executive Summary
 
-**AtchuJobs** is a modern, responsive, production-ready employment platform built exclusively for **Atchuthapuram Mandal, Anakapalli District, Andhra Pradesh**. It connects local job seekers with verified employers across the **APSEZ (Andhra Pradesh Special Economic Zone) industrial corridor**, **Brandix India Apparel City (BIAC)**, Pharma & Chemical clusters, engineering fabrication units, and local commercial establishments.
+**AtchuJobs** is a modern, responsive, production-ready employment platform built exclusively for **Atchuthapuram**. It connects local job seekers with verified employers across the local industrial corridor, apparel clusters, pharma & chemical units, engineering fabrication plants, and commercial establishments.
 
-Inspired by LinkedIn, Naukri, and Indeed, AtchuJobs features an original design with a **clean white background and navy blue corporate theme**, **dual-language support (English and Telugu / తెలుగు)**, an anti-fraud verification system, and a **strict Zero-Tolerance Fake Job & Fee Prevention policy**.
+Inspired by LinkedIn, Naukri, and Indeed, AtchuJobs features an original design with a **clean white background and navy blue corporate theme**, English language interface, an anti-fraud verification system, and a **strict Zero-Tolerance Fake Job & Fee Prevention policy**.
 
 ---
 
@@ -26,23 +26,23 @@ Inspired by LinkedIn, Naukri, and Indeed, AtchuJobs features an original design 
 ## 👥 Three Complete User Roles
 
 ### 1. 👨‍💼 Job Seekers
-- **Registration & Profile:** Create professional profile with name, phone, native village in Atchuthapuram Mandal, headline, bio, education, experience, and skills chips.
+- **Registration & Profile:** Create professional profile with name, phone, native village in Atchuthapuram, headline, bio, education, experience, and skills chips.
 - **Resume Management:** Upload PDF resume, preview CV, and attach to applications.
-- **Search & Filters:** Search jobs by keywords, skills, salary, job type, shift type, and **native village filter (all 20 villages in Atchuthapuram Mandal)**.
-- **SEZ Perks Filtering:** Filter jobs that offer **Free Bus Transportation** across mandal villages or subsidized canteen facilities.
+- **Search & Filters:** Search jobs by keywords, skills, salary, job type, shift type, and **native village filter (all 20 villages in Atchuthapuram)**.
+- **Workplace Perks Filtering:** Filter jobs that offer **Free Bus Transportation** across local villages or subsidized canteen facilities.
 - **Saved Jobs:** Bookmark interesting vacancies to apply later.
 - **Application Status Lifecycle:** Track live status progression across all stages:
   $$\text{Submitted} \longrightarrow \text{Under Review} \longrightarrow \text{Shortlisted} \longrightarrow \text{Interview Scheduled} \longrightarrow \text{Selected / Rejected}$$
 - **Interview Notifications:** View interview date, venue, gate pass instructions, and contact details directly in the dashboard.
 
 ### 2. 🏭 Employers
-- **Company Profile:** Register legal business name, factory location, SEZ zone (e.g. APSEZ Sector 1/2, Brandix India Apparel City), website, contact info, and logo.
-- **Business Verification:** Mandatory upload of **GSTIN**, **PAN**, **AP Factory License**, or Trade License. Unverified employers cannot publish live vacancies until admin clearance.
+- **Company Profile:** Register legal business name, plant location, industrial zone (e.g. Sector 1/2, Apparel City), website, contact info, and logo.
+- **Business Verification:** Mandatory upload of **GSTIN**, **PAN**, **Factory License**, or Trade License. Unverified employers cannot publish live vacancies until admin clearance.
 - **Post Vacancies:** Complete posting form specifying shift type (General, Day, Night, Rotational 3-shift), vacancy count, education, salary range, bus facility routes, and **mandatory zero-fee pledge**.
 - **Applicant Pipeline:** Review candidate profiles, native village, and PDF resumes.
 - **Status Management:** Shortlist candidates, reject with feedback, or open the **Interview Scheduler Modal** to assign interview date/time, security gate pass instructions, and plant venue.
 
-### 3. 🛡️ Mandal Admin
+### 3. 🛡️ Admin
 - **Live Database KPIs:** Real-time analytics for total job seekers, registered employers, verified vs pending employers, active jobs, pending jobs, reported fake jobs, and total applications.
 - **Interactive Visualizations:** Jobs breakdown by **12 local categories** and **20 Atchuthapuram villages**.
 - **Company Verification:** Inspect uploaded business documents (GSTIN/Factory License) and approve verification (granting the green verified badge) or reject.
@@ -56,10 +56,10 @@ Inspired by LinkedIn, Naukri, and Indeed, AtchuJobs features an original design 
 ## 🛡️ Fake Job Prevention & Zero-Fee Guarantee
 
 1. **Mandatory Employer Verification:** Employers must submit valid business registration proof before their vacancies are published to the public.
-2. **Every Vacancy Moderated:** All job postings undergo review by the mandal admin desk.
+2. **Every Vacancy Moderated:** All job postings undergo review by the admin moderation desk.
 3. **Dual Verification Badges:**
    - 🛡️ **Verified Employer Badge:** Indicates corporate GSTIN/Factory registration has been validated.
-   - 📋 **Admin Approved Vacancy Badge:** Indicates work location, salary realism, and job description have passed mandal scrutiny.
+   - 📋 **Admin Approved Vacancy Badge:** Indicates work location, salary realism, and job description have passed administrative scrutiny.
 4. **Report Fraudulent Vacancy Button:** On every job card and job detail page, candidates can flag suspicious recruiters for:
    - Demanding registration fees, uniform deposits, or interview fees.
    - Ghost company or fake address.
@@ -68,46 +68,46 @@ Inspired by LinkedIn, Naukri, and Indeed, AtchuJobs features an original design 
 
 ---
 
-## 🌐 20 Official Villages in Atchuthapuram Mandal
+## 🌐 20 Official Villages in Atchuthapuram
 
-AtchuJobs natively supports all official villages in Atchuthapuram Mandal (PIN: 531011 & 531033), Anakapalli District:
-1. **Atchuthapuram (అచ్యుతాపురం)**
-2. **Haripalem (హరిపాలెం)**
-3. **Duppituru (దుప్పిటూరు)**
-4. **Kondakarla (కొండకర్ల)**
-5. **Maduturu (మడుతూరు)**
-6. **Pudimadaka (పూడిమడక)**
-7. **Veduruvada (వెదురువాడ)**
-8. **Somavaram (సోమవరం)**
-9. **Thimmarajupeta (తిమ్మరాజుపేట)**
-10. **Yellapuvanipalem (ఎల్లపువానిపాలెం)**
-11. **Dibbapalem (దిబ్బపాలెం)**
-12. **Dosuru (దోసూరు)**
-13. **Ugginapalem (ఉగ్గినపాలెం)**
-14. **Moturupalem (మోటురుపాలెం)**
-15. **Nukalapalem (నూకాలపాలెం)**
-16. **Tantadi (తంతడి)**
-17. **Pedapadu (పెదపాడు)**
-18. **Chodapalle (చోడపల్లె)**
-19. **Rayavaram (రాయవరం)**
-20. **Jaggannapeta (జగ్గన్నపేట)**
+AtchuJobs natively supports all official villages in Atchuthapuram (PIN: 531011 & 531033):
+1. **Atchuthapuram**
+2. **Haripalem**
+3. **Duppituru**
+4. **Kondakarla**
+5. **Maduturu**
+6. **Pudimadaka**
+7. **Veduruvada**
+8. **Somavaram**
+9. **Thimmarajupeta**
+10. **Yellapuvanipalem**
+11. **Dibbapalem**
+12. **Dosuru**
+13. **Ugginapalem**
+14. **Moturupalem**
+15. **Nukalapalem**
+16. **Tantadi**
+17. **Pedapadu**
+18. **Chodapalle**
+19. **Rayavaram**
+20. **Jaggannapeta**
 
 ---
 
 ## 📂 12 Local Job Categories
 
-1. **Manufacturing (తయారీ రంగం):** Assembly operators, line supervisors, packing technicians.
-2. **IT and Computer (ఐటీ మరియు కంప్యూటర్):** Desktop support, network technicians, data entry.
-3. **Engineering (ఇంజనీరింగ్):** CNC/VMC operators, mechanical, electrical, and chemical engineers.
-4. **Pharma (ఫార్మా రంగం):** Quality Control (QC), QA, HPLC analysts, bulk drug formulation in APSEZ.
-5. **Office Administration (ఆఫీస్ అడ్మినిస్ట్రేషన్):** Front desk, HR assistants, store documentation.
-6. **Accounting (ఖాతాలు మరియు అకౌంటింగ్):** Tally Prime operators, GST billing clerks.
-7. **Security (సెక్యూరిటీ మరియు భద్రత):** Plant security guards, gate controllers, CCTV monitors.
-8. **Transportation (రవాణా మరియు లాజిస్టిక్స్):** Heavy vehicle drivers, SEZ bus drivers, forklift operators.
-9. **Education (విద్య మరియు శిక్షణ):** Local school teachers, industrial training instructors.
-10. **Healthcare (వైద్యం మరియు ఆరోగ్య సంరక్షణ):** Staff nurses, plant first aid attendants, lab technicians.
-11. **Skilled Workers (నైపుణ్యం కలిగిన కార్మికులు):** Electricians, fitters, welders, machinists.
-12. **General Labour (జనరల్ లేబర్):** Warehouse helpers, dispatch assistants.
+1. **Manufacturing:** Assembly operators, line supervisors, packing technicians.
+2. **IT and Computer:** Desktop support, network technicians, data entry.
+3. **Engineering:** CNC/VMC operators, mechanical, electrical, and chemical engineers.
+4. **Pharma:** Quality Control (QC), QA, HPLC analysts, bulk drug formulation.
+5. **Office Administration:** Front desk, HR assistants, store documentation.
+6. **Accounting:** Tally Prime operators, GST billing clerks.
+7. **Security:** Plant security guards, gate controllers, CCTV monitors.
+8. **Transportation:** Heavy vehicle drivers, local bus drivers, forklift operators.
+9. **Education:** Local school teachers, industrial training instructors.
+10. **Healthcare:** Staff nurses, plant first aid attendants, lab technicians.
+11. **Skilled Workers:** Electricians, fitters, welders, machinists.
+12. **General Labour:** Warehouse helpers, dispatch assistants.
 
 ---
 
@@ -151,7 +151,7 @@ AtchuJobs includes a **Quick Persona Switcher** in the top navigation bar, allow
    - Click **"Apply Now"**: confirm candidate phone, select native village, attach resume, and submit.
 4. Navigate to **"Dashboard"** (`/dashboard/seeker`):
    - In **My Applications**, observe the lifecycle progress bar (*Submitted $\rightarrow$ Shortlisted $\rightarrow$ Interview*).
-   - Review the scheduled interview for *Laurus Bio-Pharma* with APSEZ gate pass instructions.
+   - Review the scheduled interview for *Laurus Bio-Pharma* with security gate pass instructions.
    - Switch to **Resume & Credentials** tab: click *Edit Credentials*, add a new skill chip (e.g. *CNC Machining*), update phone, and click *Save Profile Changes*.
    - Switch to **Saved Jobs** tab to view bookmarked positions.
 
@@ -165,7 +165,7 @@ AtchuJobs includes a **Quick Persona Switcher** in the top navigation bar, allow
    - **Create Job Posting tab:** fill out the vacancy form with shift type, salary range, free bus toggle, and publish.
    - **Business Verification Documents tab:** view approved GSTIN document and submit a new Factory License document.
 
-### Test Scenario 3: Admin Journey (🛡️ Mandal Moderation Admin)
+### Test Scenario 3: Admin Journey (🛡️ Moderation Admin)
 1. In the top bar, click **"Admin"** (or login as Admin).
 2. Navigate to **Admin Dashboard (`/dashboard/admin`)**:
    - **Real Database Analytics tab:** view live metrics for Seekers, Employers, Active Jobs, Category distribution, and Village breakdown.
@@ -173,19 +173,14 @@ AtchuJobs includes a **Quick Persona Switcher** in the top navigation bar, allow
    - **Employer Verification tab:** review registered companies. Test approving pending employers or clicking **"Suspend Account"** to blacklist fraudulent agencies.
    - **Fake Job Reports tab:** review reports filed by candidates. Examine details and test *Enforce Sanction & Resolve*.
    - **Moderation & Audit Trail tab:** inspect immutable audit logs of all actions, targets, admin IDs, and IP addresses.
-   - **Mandal Villages & Categories tab:** review the 20 official villages and 12 categories.
+   - **Villages & Categories tab:** review the 20 official villages and 12 categories.
 
 ### Test Scenario 4: Anti-Fraud Fake Job Reporting
 1. Visit `/jobs`.
-2. On any job card, click the **"Report Job"** button (red triangle alert).
+2. On any job card, click the **"Report Job"** button (red alert icon).
 3. Select a reason: *Demanded registration fee / interview deposit*.
 4. Enter incident details (e.g. *Recruiter asked for Rs 500 gate pass deposit*) and submit.
 5. Switch to **Admin Dashboard $\rightarrow$ Fake Job Reports** to verify the report appears instantly in the moderation queue!
-
-### Test Scenario 5: Telugu Language Toggle (తెలుగు)
-1. In the top bar, click **"తెలుగు"**.
-2. Notice all navigation items, headings, taglines, village names, category labels, badges, and anti-fraud warnings update to clear Telugu!
-3. Click **"English"** to toggle back seamlessly.
 
 ---
 
@@ -250,11 +245,11 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 │   ├── lib/
 │   │   ├── context/
 │   │   │   ├── auth-context.tsx       # Auth provider & demo role switcher
-│   │   │   └── language-context.tsx   # Dual language (English & Telugu) system
+│   │   │   └── language-context.tsx   # Language context
 │   │   ├── data/
-│   │   │   ├── villages.ts            # 20 official Atchuthapuram Mandal villages
+│   │   │   ├── villages.ts            # 20 official Atchuthapuram villages
 │   │   │   ├── categories.ts          # 12 local job categories
-│   │   │   └── sample-data.ts         # Authentic APSEZ sample employers & jobs
+│   │   │   └── sample-data.ts         # Authentic local sample employers & jobs
 │   │   ├── services/
 │   │   │   ├── job-service.ts         # Job queries, filtering, reporting, bookmarks
 │   │   │   ├── application-service.ts # Applications pipeline & interview scheduler
@@ -265,7 +260,7 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 │   ├── components/
 │   │   ├── layout/
 │   │   │   ├── Navbar.tsx             # Navy blue navigation & persona switcher
-│   │   │   └── Footer.tsx             # Mandal office contacts & zero-fee warning
+│   │   │   └── Footer.tsx             # Local contacts & zero-fee warning
 │   │   └── jobs/
 │   │       ├── JobCard.tsx            # Verified job card with perks chips
 │   │       ├── JobSearchBar.tsx       # Keyword, village & category search
@@ -275,12 +270,12 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 │   └── app/
 │       ├── layout.tsx                 # Root layout with font & providers
 │       ├── globals.css                # Tailwind global styles
-│       ├── page.tsx                   # Homepage (Hero, Stats, Verified Jobs, SEZ Units)
+│       ├── page.tsx                   # Homepage (Hero, Stats, Verified Jobs, Local Units)
 │       ├── jobs/
 │       │   ├── page.tsx               # Job listings with filter sidebar
 │       │   └── [id]/page.tsx          # Full job specifications & application CTA
 │       ├── companies/
-│       │   └── page.tsx               # Verified SEZ companies directory
+│       │   └── page.tsx               # Verified companies directory
 │       ├── villages/
 │       │   └── page.tsx               # 20 Atchuthapuram villages job directory
 │       ├── login/
@@ -300,5 +295,5 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 
 - ✅ Next.js 14 production build compiled with zero errors.
 - ✅ All 7 routes (`/`, `/jobs`, `/companies`, `/villages`, `/dashboard/seeker`, `/dashboard/employer`, `/dashboard/admin`) return **HTTP 200 OK**.
-- ✅ Clean Git repository initialized with initial commit.
-- ✅ 100% compliant with Atchuthapuram Mandal geographic and industrial specifications.
+- ✅ Clean Git repository initialized with commits.
+- ✅ 100% compliant with Atchuthapuram geographic and industrial specifications.

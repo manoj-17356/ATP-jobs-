@@ -46,7 +46,7 @@ export default function CompaniesPage() {
             Recruiting Enterprises in Atchuthapuram
           </h1>
           <p className="text-xs sm:text-sm text-slate-300 mt-1">
-            Browse authenticated APSEZ manufacturing units, Brandix Apparel City facilities, and local enterprises certified with zero-fee compliance.
+            Browse authenticated manufacturing units, Brandix Apparel City facilities, and local enterprises certified with zero-fee compliance.
           </p>
         </div>
 
@@ -127,3 +127,4 @@ export default function CompaniesPage() {
     </div>
   );
 }
+

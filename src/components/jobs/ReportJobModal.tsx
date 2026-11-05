@@ -65,7 +65,7 @@ export default function ReportJobModal({ job, isOpen, onClose }: ReportJobModalP
             <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
               <CheckCircle2 className="w-8 h-8" />
             </div>
-            <h4 className="text-lg font-bold text-navy-950">Report Submitted to Mandal Moderation Desk</h4>
+            <h4 className="text-lg font-bold text-navy-950">Report Submitted to Moderation Desk</h4>
             <p className="text-xs text-slate-600 max-w-sm mx-auto leading-relaxed">
               Thank you for keeping Atchuthapuram safe. Our team investigates every flagged vacancy. If fraudulent fees or false claims are verified, the employer account will be immediately banned and reported.
             </p>
@@ -179,3 +179,4 @@ export default function ReportJobModal({ job, isOpen, onClose }: ReportJobModalP
     </div>
   );
 }
+

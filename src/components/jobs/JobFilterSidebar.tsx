@@ -41,7 +41,7 @@ export default function JobFilterSidebar({
       {/* Villages Filter */}
       <div>
         <label className="block text-xs font-bold text-slate-800 mb-2">
-          Atchuthapuram Mandal Village
+          Village in Atchuthapuram
         </label>
         <select
           value={filters.villageName}
@@ -51,7 +51,7 @@ export default function JobFilterSidebar({
           <option value="all">{t.allVillages}</option>
           {ATCHUTHAPURAM_VILLAGES.map((v) => (
             <option key={v.id} value={v.name}>
-              {language === 'te' ? v.name_te : v.name}
+              {v.name}
             </option>
           ))}
         </select>
@@ -70,7 +70,7 @@ export default function JobFilterSidebar({
           <option value="all">{t.allCategories}</option>
           {JOB_CATEGORIES.map((c) => (
             <option key={c.id} value={c.id}>
-              {language === 'te' ? c.name_te : c.name}
+              {c.name}
             </option>
           ))}
         </select>
@@ -174,3 +174,4 @@ export default function JobFilterSidebar({
     </div>
   );
 }
+

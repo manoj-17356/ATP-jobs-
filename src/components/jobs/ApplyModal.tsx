@@ -149,7 +149,7 @@ export default function ApplyModal({ job, isOpen, onClose, onSuccess }: ApplyMod
 
             <div>
               <label className="block text-xs font-bold text-slate-700 mb-1">
-                Your Village (Atchuthapuram Mandal) <span className="text-red-500">*</span>
+                Your Village (Atchuthapuram) <span className="text-red-500">*</span>
               </label>
               <select
                 value={village}
@@ -158,7 +158,7 @@ export default function ApplyModal({ job, isOpen, onClose, onSuccess }: ApplyMod
               >
                 {ATCHUTHAPURAM_VILLAGES.map((v) => (
                   <option key={v.id} value={v.name}>
-                    {v.name} ({v.name_te})
+                    {v.name}
                   </option>
                 ))}
               </select>
@@ -251,3 +251,4 @@ export default function ApplyModal({ job, isOpen, onClose, onSuccess }: ApplyMod
     </div>
   );
 }
+

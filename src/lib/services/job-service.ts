@@ -57,7 +57,6 @@ export function getAllActiveJobs(filters?: Partial<JobFilters>): Job[] {
     filtered = filtered.filter(
       (j) =>
         j.title.toLowerCase().includes(q) ||
-        (j.title_te && j.title_te.toLowerCase().includes(q)) ||
         j.description.toLowerCase().includes(q) ||
         j.employer?.company_name.toLowerCase().includes(q) ||
         j.skills_required.some((s) => s.toLowerCase().includes(q))
