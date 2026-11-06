@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useLanguage } from '@/lib/context/language-context';
-import { ATCHUTHAPURAM_VILLAGES } from '@/lib/data/villages';
 import { JOB_CATEGORIES } from '@/lib/data/categories';
 import { Search, MapPin, Briefcase, ChevronDown } from 'lucide-react';
 
@@ -42,7 +41,7 @@ export default function JobSearchBar({
     }
   };
 
-  const popularVillages = ['Haripalem', 'Atchuthapuram', 'Duppituru', 'Kondakarla', 'Pudimadaka'];
+  const popularTags = ['Machine Operator', 'QC Chemist', 'Security Guard', 'Accountant', 'Electrician', 'Office Assistant'];
 
   return (
     <div className="w-full">
@@ -64,7 +63,7 @@ export default function JobSearchBar({
 
         <div className="hidden md:block w-px h-8 bg-slate-200" />
 
-        {/* Village Dropdown */}
+        {/* Location Dropdown */}
         <div className="w-full md:w-56 flex items-center gap-2 px-3 py-2 bg-slate-50 md:bg-transparent rounded-xl border md:border-none border-slate-200">
           <MapPin className="w-5 h-5 text-red-500 shrink-0" />
           <div className="w-full">
@@ -73,12 +72,11 @@ export default function JobSearchBar({
               onChange={(e) => setVillage(e.target.value)}
               className="w-full text-xs sm:text-sm text-slate-800 bg-transparent focus:outline-none font-semibold cursor-pointer"
             >
-              <option value="all">{t.allVillages}</option>
-              {ATCHUTHAPURAM_VILLAGES.map((v) => (
-                <option key={v.id} value={v.name}>
-                  {v.name}
-                </option>
-              ))}
+              <option value="all">Atchuthapuram (All Areas)</option>
+              <option value="Atchuthapuram">Atchuthapuram Center</option>
+              <option value="Industrial Area">Industrial Corridor</option>
+              <option value="Brandix Apparel City">Brandix Apparel City</option>
+              <option value="Pharma Cluster">Pharma Cluster</option>
             </select>
           </div>
         </div>
@@ -114,24 +112,24 @@ export default function JobSearchBar({
         </button>
       </form>
 
-      {/* Popular village quick-filters */}
+      {/* Popular Role Quick-filters */}
       {!isCompact && (
         <div className="flex flex-wrap items-center gap-2 mt-3 px-1 text-xs">
-          <span className="text-slate-400 font-medium">Popular Villages:</span>
-          {popularVillages.map((vName) => (
+          <span className="text-slate-400 font-medium">Popular:</span>
+          {popularTags.map((tag) => (
             <button
-              key={vName}
+              key={tag}
               onClick={() => {
-                setVillage(vName);
+                setSearch(tag);
                 if (onSearch) {
-                  onSearch(search, vName, category);
+                  onSearch(tag, village, category);
                 } else {
-                  router.push(`/jobs?village=${encodeURIComponent(vName)}`);
+                  router.push(`/jobs?q=${encodeURIComponent(tag)}`);
                 }
               }}
               className="px-2.5 py-0.5 rounded-full bg-white/80 hover:bg-white text-slate-700 border border-slate-200/80 shadow-xs text-[11px] font-semibold hover:border-blue-400 transition"
             >
-              {vName}
+              {tag}
             </button>
           ))}
         </div>

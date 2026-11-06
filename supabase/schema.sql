@@ -1,5 +1,5 @@
 -- ====================================================================
--- AtchuJobs Database Schema (Supabase PostgreSQL)
+-- ATP Jobs Database Schema (Supabase PostgreSQL)
 -- Atchuthapuram Local Job Portal
 -- ====================================================================
 
@@ -461,28 +461,9 @@ CREATE TRIGGER on_auth_user_created
 -- 14. SEED DATA FOR ATCHUTHAPURAM
 -- ====================================================================
 
--- Insert Official Villages in Atchuthapuram
+-- Insert Official Location for Atchuthapuram
 INSERT INTO public.villages (name, pin_code) VALUES
-('Atchuthapuram', '531011'),
-('Haripalem', '531011'),
-('Duppituru', '531011'),
-('Kondakarla', '531033'),
-('Maduturu', '531011'),
-('Pudimadaka', '531011'),
-('Veduruvada', '531011'),
-('Somavaram', '531011'),
-('Thimmarajupeta', '531011'),
-('Yellapuvanipalem', '531011'),
-('Dibbapalem', '531011'),
-('Dosuru', '531011'),
-('Ugginapalem', '531011'),
-('Moturupalem', '531011'),
-('Nukalapalem', '531011'),
-('Tantadi', '531011'),
-('Pedapadu', '531011'),
-('Chodapalle', '531011'),
-('Rayavaram', '531011'),
-('Jaggannapeta', '531011')
+('Atchuthapuram', '531011')
 ON CONFLICT (name) DO NOTHING;
 
 -- Insert 12 Local Job Categories

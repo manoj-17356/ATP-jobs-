@@ -3,14 +3,14 @@ import { INITIAL_JOBS, INITIAL_EMPLOYERS, INITIAL_REPORTS } from '@/lib/data/sam
 import { JOB_CATEGORIES } from '@/lib/data/categories';
 import { ATCHUTHAPURAM_VILLAGES } from '@/lib/data/villages';
 
-const JOBS_STORAGE_KEY = 'atchujobs_jobs_list';
-const SAVED_JOBS_KEY = 'atchujobs_saved_jobs';
-const REPORTS_STORAGE_KEY = 'atchujobs_job_reports';
+const JOBS_STORAGE_KEY = 'atpjobs_jobs_list';
+const SAVED_JOBS_KEY = 'atpjobs_saved_jobs';
+const REPORTS_STORAGE_KEY = 'atpjobs_job_reports';
 
 export function getStoredJobs(): Job[] {
   if (typeof window === 'undefined') return INITIAL_JOBS;
   try {
-    const raw = localStorage.getItem(JOBS_STORAGE_KEY);
+    const raw = localStorage.getItem(JOBS_STORAGE_KEY) || localStorage.getItem('atchujobs_jobs_list');
     if (!raw) {
       localStorage.setItem(JOBS_STORAGE_KEY, JSON.stringify(INITIAL_JOBS));
       return INITIAL_JOBS;
@@ -29,7 +29,7 @@ export function saveStoredJobs(jobs: Job[]) {
 
 export function getJobWithDetails(job: Job): Job {
   const employers = typeof window !== 'undefined' 
-    ? (JSON.parse(localStorage.getItem('atchujobs_employers') || 'null') || INITIAL_EMPLOYERS)
+    ? (JSON.parse(localStorage.getItem('atpjobs_employers') || localStorage.getItem('atchujobs_employers') || 'null') || INITIAL_EMPLOYERS)
     : INITIAL_EMPLOYERS;
 
   const employer = employers.find((e: any) => e.id === job.employer_id) || INITIAL_EMPLOYERS[0];
@@ -147,7 +147,7 @@ export function updateJobStatus(jobId: string, status: Job['status'], adminNotes
 export function getSavedJobIds(seekerId: string): string[] {
   if (typeof window === 'undefined') return [];
   try {
-    const raw = localStorage.getItem(SAVED_JOBS_KEY);
+    const raw = localStorage.getItem(SAVED_JOBS_KEY) || localStorage.getItem('atchujobs_saved_jobs');
     if (!raw) return [];
     const saved: SavedJob[] = JSON.parse(raw);
     return saved.filter((s) => s.seeker_id === seekerId).map((s) => s.job_id);
@@ -207,7 +207,7 @@ export function submitJobReport(report: Omit<JobReport, 'id' | 'status' | 'creat
 export function getAllReports(): JobReport[] {
   if (typeof window === 'undefined') return INITIAL_REPORTS;
   try {
-    const raw = localStorage.getItem(REPORTS_STORAGE_KEY);
+    const raw = localStorage.getItem(REPORTS_STORAGE_KEY) || localStorage.getItem('atchujobs_job_reports');
     if (!raw) {
       localStorage.setItem(REPORTS_STORAGE_KEY, JSON.stringify(INITIAL_REPORTS));
       return INITIAL_REPORTS;

@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { Job, Application } from '@/types';
 import { submitApplication } from '@/lib/services/application-service';
 import { useAuth } from '@/lib/context/auth-context';
-import { ATCHUTHAPURAM_VILLAGES } from '@/lib/data/villages';
 import { Briefcase, X, FileText, CheckCircle2, AlertCircle, UploadCloud } from 'lucide-react';
 
 interface ApplyModalProps {
@@ -149,19 +148,16 @@ export default function ApplyModal({ job, isOpen, onClose, onSuccess }: ApplyMod
 
             <div>
               <label className="block text-xs font-bold text-slate-700 mb-1">
-                Your Village (Atchuthapuram) <span className="text-red-500">*</span>
+                Your Area / Address (Atchuthapuram) <span className="text-red-500">*</span>
               </label>
-              <select
+              <input
+                type="text"
+                required
                 value={village}
                 onChange={(e) => setVillage(e.target.value)}
+                placeholder="e.g. Atchuthapuram Center, Sector 2, Main Junction"
                 className="w-full text-xs border border-slate-300 rounded-xl px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-blue-600 font-medium"
-              >
-                {ATCHUTHAPURAM_VILLAGES.map((v) => (
-                  <option key={v.id} value={v.name}>
-                    {v.name}
-                  </option>
-                ))}
-              </select>
+              />
             </div>
 
             {/* Resume Selection */}

@@ -1,13 +1,13 @@
 import { Employer, EmployerDocument, EmployerStatus, AuditLog } from '@/types';
 import { INITIAL_EMPLOYERS, INITIAL_AUDIT_LOGS } from '@/lib/data/sample-data';
 
-const EMPLOYERS_KEY = 'atchujobs_employers';
-const AUDIT_LOGS_KEY = 'atchujobs_audit_logs';
+const EMPLOYERS_KEY = 'atpjobs_employers';
+const AUDIT_LOGS_KEY = 'atpjobs_audit_logs';
 
 export function getStoredEmployers(): Employer[] {
   if (typeof window === 'undefined') return INITIAL_EMPLOYERS;
   try {
-    const raw = localStorage.getItem(EMPLOYERS_KEY);
+    const raw = localStorage.getItem(EMPLOYERS_KEY) || localStorage.getItem('atchujobs_employers');
     if (!raw) {
       localStorage.setItem(EMPLOYERS_KEY, JSON.stringify(INITIAL_EMPLOYERS));
       return INITIAL_EMPLOYERS;

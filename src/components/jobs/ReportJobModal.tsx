@@ -49,7 +49,7 @@ export default function ReportJobModal({ job, isOpen, onClose }: ReportJobModalP
             </div>
             <div>
               <h3 className="font-bold text-red-950 text-base">Report Fraudulent Vacancy</h3>
-              <p className="text-xs text-red-700">AtchuJobs Zero-Tolerance Fake Job Desk</p>
+              <p className="text-xs text-red-700">ATP Jobs Zero-Tolerance Fake Job Desk</p>
             </div>
           </div>
           <button

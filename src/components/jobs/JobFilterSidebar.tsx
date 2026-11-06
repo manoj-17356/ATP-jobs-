@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { JobFilters } from '@/types';
-import { ATCHUTHAPURAM_VILLAGES } from '@/lib/data/villages';
 import { JOB_CATEGORIES } from '@/lib/data/categories';
 import { useLanguage } from '@/lib/context/language-context';
 import { Filter, RotateCcw, Bus, ShieldCheck } from 'lucide-react';
@@ -38,22 +37,21 @@ export default function JobFilterSidebar({
         </button>
       </div>
 
-      {/* Villages Filter */}
+      {/* Location Filter */}
       <div>
         <label className="block text-xs font-bold text-slate-800 mb-2">
-          Village in Atchuthapuram
+          Location in Atchuthapuram
         </label>
         <select
           value={filters.villageName}
           onChange={(e) => onChange({ ...filters, villageName: e.target.value })}
           className="w-full text-xs border border-slate-300 rounded-xl px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium"
         >
-          <option value="all">{t.allVillages}</option>
-          {ATCHUTHAPURAM_VILLAGES.map((v) => (
-            <option key={v.id} value={v.name}>
-              {v.name}
-            </option>
-          ))}
+          <option value="all">All Atchuthapuram Areas</option>
+          <option value="Atchuthapuram">Atchuthapuram Center</option>
+          <option value="Industrial Area">Industrial Corridor</option>
+          <option value="Brandix Apparel City">Brandix Apparel City</option>
+          <option value="Pharma Cluster">Pharma Cluster</option>
         </select>
       </div>
 

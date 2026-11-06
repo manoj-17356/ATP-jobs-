@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { useLanguage } from '@/lib/context/language-context';
 import { getAllActiveJobs } from '@/lib/services/job-service';
 import { getStoredEmployers } from '@/lib/services/employer-service';
-import { ATCHUTHAPURAM_VILLAGES } from '@/lib/data/villages';
 import { JOB_CATEGORIES } from '@/lib/data/categories';
 import { Job, Employer } from '@/types';
 import JobSearchBar from '@/components/jobs/JobSearchBar';
@@ -92,7 +91,7 @@ export default function HomePage() {
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="w-4 h-4 text-blue-400" />
-              <span>20 Local Villages Covered</span>
+              <span>Atchuthapuram Local Focus</span>
             </div>
           </div>
         </div>
@@ -119,10 +118,10 @@ export default function HomePage() {
           </div>
           <div className="text-center p-3 border-r border-slate-100 last:border-none">
             <div className="text-2xl sm:text-3xl font-black text-emerald-600">
-              20
+              100%
             </div>
             <div className="text-xs font-medium text-slate-500 mt-0.5">
-              {t.statVillages}
+              Local Verification
             </div>
           </div>
           <div className="text-center p-3">
@@ -148,7 +147,7 @@ export default function HomePage() {
               Never Pay Any Money for Jobs in Atchuthapuram
             </h3>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              AtchuJobs enforces a strict zero-tolerance mandate. If any recruiter or agency asks for application fees, medical test deposits, or gate pass money, report them instantly. Our admin moderation desk investigates within 2 hours.
+              ATP Jobs enforces a strict zero-tolerance mandate. If any recruiter or agency asks for application fees, medical test deposits, or gate pass money, report them instantly. Our admin moderation desk investigates within 2 hours.
             </p>
           </div>
           <div className="shrink-0 flex flex-col sm:flex-row gap-3">
@@ -328,51 +327,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 7. ATCHUTHAPURAM VILLAGES DIRECTORY */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-navy-900 text-white rounded-3xl p-8 sm:p-10 shadow-xl border border-navy-800">
-          <div className="max-w-2xl mb-8">
-            <span className="text-xs font-bold text-amber-400 uppercase tracking-wider">
-              Local Network
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-black mt-1">
-              {t.secVillagesCovered}
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-300 mt-2">
-              Candidates residing in these villages receive priority recruitment routing and bus facility matching from industrial employers.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-3">
-            {ATCHUTHAPURAM_VILLAGES.map((v) => (
-              <Link
-                key={v.id}
-                href={`/jobs?village=${encodeURIComponent(v.name)}`}
-                className="bg-navy-800/80 hover:bg-blue-600 border border-navy-700 hover:border-blue-500 rounded-xl p-3 transition group"
-              >
-                <div className="text-xs font-bold text-white group-hover:translate-x-0.5 transition truncate">
-                  {v.name}
-                </div>
-                <div className="text-[11px] text-slate-400 group-hover:text-blue-100 truncate">
-                  PIN {v.pin_code}
-                </div>
-              </Link>
-            ))}
-          </div>
-
-          <div className="mt-8 pt-6 border-t border-navy-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-            <span>PIN 531011</span>
-            <Link
-              href="/villages"
-              className="text-amber-400 font-bold hover:underline inline-flex items-center gap-1"
-            >
-              Explore Village Job Matrix &rarr;
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* 8. REGISTER / JOIN CTA */}
+      {/* 7. REGISTER / JOIN CTA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 shadow-sm text-center max-w-3xl mx-auto space-y-6">
           <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mx-auto">

@@ -6,12 +6,12 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
-  title: 'AtchuJobs – Local Jobs. Local Opportunities. (Atchuthapuram)',
+  title: 'ATP Jobs – Local Jobs. Local Opportunities. (Atchuthapuram)',
   description:
     'Dedicated job portal exclusively for Atchuthapuram. Genuine verified vacancies from industrial parks, Brandix Apparel City, and local enterprises.',
   keywords: [
+    'ATP jobs',
     'Atchuthapuram jobs',
-    'SEZ jobs',
     'Brandix India Apparel City careers',
     'Atchuthapuram vacancies',
     'Pharma jobs Atchuthapuram',

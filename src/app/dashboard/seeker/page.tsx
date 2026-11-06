@@ -6,7 +6,6 @@ import { useAuth } from '@/lib/context/auth-context';
 import { useLanguage } from '@/lib/context/language-context';
 import { getApplicationsForSeeker } from '@/lib/services/application-service';
 import { getStoredJobs, getSavedJobIds, toggleSaveJob } from '@/lib/services/job-service';
-import { ATCHUTHAPURAM_VILLAGES } from '@/lib/data/villages';
 import { Application, Job, UserProfile } from '@/types';
 import JobCard from '@/components/jobs/JobCard';
 import {
@@ -170,7 +169,7 @@ export default function SeekerDashboardPage() {
               <span>•</span>
               <span>{user?.phone || '+91 98480 12345'}</span>
               <span>•</span>
-              <span>{user?.email || 'ramesh.seeker@atchujobs.in'}</span>
+              <span>{user?.email || 'ramesh.seeker@atpjobs.in'}</span>
             </div>
           </div>
         </div>
@@ -413,19 +412,15 @@ export default function SeekerDashboardPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-bold text-slate-700 mb-1">
-                    Village in Atchuthapuram
+                    Location in Atchuthapuram
                   </label>
-                  <select
+                  <input
+                    type="text"
                     value={villageName}
                     onChange={(e) => setVillageName(e.target.value)}
-                    className="w-full text-xs border border-slate-300 rounded-xl px-3 py-2.5 bg-white focus:ring-2 focus:ring-blue-600 font-semibold"
-                  >
-                    {ATCHUTHAPURAM_VILLAGES.map((v) => (
-                      <option key={v.id} value={v.name}>
-                        {v.name}
-                      </option>
-                    ))}
-                  </select>
+                    placeholder="e.g. Atchuthapuram Center, Haripalem Road"
+                    className="w-full text-xs border border-slate-300 rounded-xl px-3 py-2.5 focus:ring-2 focus:ring-blue-600 font-semibold"
+                  />
                 </div>
 
                 <div>

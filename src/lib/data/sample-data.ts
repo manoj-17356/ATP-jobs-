@@ -184,13 +184,13 @@ export const INITIAL_EMPLOYERS: Employer[] = [
   {
     id: 'emp-4',
     user_id: 'user-employer-4',
-    company_name: 'Atchu Care Hospital & Diagnostics',
+    company_name: 'ATP Care Hospital & Diagnostics',
     company_logo: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=120',
     industry: 'Healthcare & Medical Services',
     company_type: 'Multi-specialty Hospital',
     description: '50-bed multi-speciality local medical center with 24/7 trauma care, occupational health checks for industrial workers, pathology labs, and emergency ambulance services.',
-    website: 'https://atchucare.org',
-    contact_email: 'admin@atchucare.org',
+    website: 'https://atpcare.org',
+    contact_email: 'admin@atpcare.org',
     contact_phone: '+91 89242 44333',
     address: 'Near Main Junction, Atchuthapuram',
     village_id: 'v-1',
@@ -416,7 +416,7 @@ export const INITIAL_JOBS: Job[] = [
     category_id: 'cat-10', // Healthcare
     village_id: 'v-1', // Atchuthapuram
     title: 'Staff Nurse (GNM / B.Sc Nursing) – ICU & Emergency Care',
-    description: 'Atchu Care Hospital is seeking dedicated registered nurses to staff our round-the-clock emergency room, triage unit, and in-patient wards. Immediate joining available for candidates residing in Atchuthapuram.',
+    description: 'ATP Care Hospital is seeking dedicated registered nurses to staff our round-the-clock emergency room, triage unit, and in-patient wards. Immediate joining available for candidates residing in Atchuthapuram.',
     responsibilities: [
       'Monitor patient vitals, administer prescribed medications, and update medical charts',
       'Provide first aid and rapid stabilization for factory emergency cases from nearby industrial units',
@@ -637,7 +637,7 @@ export const INITIAL_NOTIFICATIONS: Notification[] = [
     id: 'notif-3',
     user_id: 'user-employer-1',
     title: 'Company Verification Approved',
-    message: 'AtchuJobs Moderation Team verified your company profile. You now have the Verified Employer Badge and can post live vacancies.',
+    message: 'ATP Jobs Moderation Team verified your company profile. You now have the Verified Employer Badge and can post live vacancies.',
     type: 'employer_verified',
     link: '/dashboard/employer',
     is_read: true,
@@ -649,7 +649,7 @@ export const INITIAL_AUDIT_LOGS: AuditLog[] = [
   {
     id: 'log-1',
     admin_id: 'user-admin-1',
-    admin_name: 'AtchuJobs Moderation Admin',
+    admin_name: 'ATP Jobs Moderation Admin',
     action: 'VERIFY_EMPLOYER',
     target_entity: 'employer',
     target_id: 'emp-1',
@@ -664,7 +664,7 @@ export const INITIAL_AUDIT_LOGS: AuditLog[] = [
   {
     id: 'log-2',
     admin_id: 'user-admin-1',
-    admin_name: 'AtchuJobs Moderation Admin',
+    admin_name: 'ATP Jobs Moderation Admin',
     action: 'APPROVE_JOB',
     target_entity: 'job',
     target_id: 'job-1',
@@ -679,7 +679,7 @@ export const INITIAL_AUDIT_LOGS: AuditLog[] = [
   {
     id: 'log-3',
     admin_id: 'user-admin-1',
-    admin_name: 'AtchuJobs Moderation Admin',
+    admin_name: 'ATP Jobs Moderation Admin',
     action: 'SUSPEND_EMPLOYER',
     target_entity: 'employer',
     target_id: 'emp-fake-99',

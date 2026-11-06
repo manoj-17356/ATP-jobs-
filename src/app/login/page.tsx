@@ -39,7 +39,7 @@ export default function LoginPage() {
             <Briefcase className="w-6 h-6 text-blue-400" />
           </div>
           <h2 className="text-2xl font-black text-navy-950">
-            Sign In to AtchuJobs
+            Sign In to ATP Jobs
           </h2>
           <p className="text-xs text-slate-500">
             Atchuthapuram Local Employment Portal

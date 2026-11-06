@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useAuth } from '@/lib/context/auth-context';
-import { ATCHUTHAPURAM_VILLAGES } from '@/lib/data/villages';
 import { Briefcase, User, Building2, ShieldCheck, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 function RegisterForm() {
@@ -78,7 +77,7 @@ function RegisterForm() {
             <Briefcase className="w-6 h-6 text-blue-400" />
           </div>
           <h2 className="text-2xl font-black text-navy-950">
-            Create an AtchuJobs Account
+            Create an ATP Jobs Account
           </h2>
           <p className="text-xs text-slate-500">
             Connect directly with verified local opportunities in Atchuthapuram
@@ -168,19 +167,16 @@ function RegisterForm() {
 
               <div>
                 <label className="block text-xs font-bold text-slate-700 mb-1">
-                  Home Village (Atchuthapuram) <span className="text-red-500">*</span>
+                  Location in Atchuthapuram <span className="text-red-500">*</span>
                 </label>
-                <select
+                <input
+                  type="text"
+                  required
                   value={seekerVillage}
                   onChange={(e) => setSeekerVillage(e.target.value)}
-                  className="w-full text-xs border border-slate-300 rounded-xl px-3 py-2.5 bg-white font-medium focus:ring-2 focus:ring-blue-600 focus:outline-none"
-                >
-                  {ATCHUTHAPURAM_VILLAGES.map((v) => (
-                    <option key={v.id} value={v.name}>
-                      {v.name}
-                    </option>
-                  ))}
-                </select>
+                  placeholder="e.g. Atchuthapuram Center, Haripalem Road"
+                  className="w-full text-xs border border-slate-300 rounded-xl px-3 py-2.5 focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                />
               </div>
             </div>
 
@@ -293,19 +289,16 @@ function RegisterForm() {
 
               <div>
                 <label className="block text-xs font-bold text-slate-700 mb-1">
-                  Village / Location
+                  Location (Atchuthapuram)
                 </label>
-                <select
+                <input
+                  type="text"
+                  required
                   value={employerVillage}
                   onChange={(e) => setEmployerVillage(e.target.value)}
-                  className="w-full text-xs border border-slate-300 rounded-xl px-3 py-2.5 bg-white font-medium"
-                >
-                  {ATCHUTHAPURAM_VILLAGES.map((v) => (
-                    <option key={v.id} value={v.name}>
-                      {v.name}
-                    </option>
-                  ))}
-                </select>
+                  placeholder="e.g. Atchuthapuram Center / Sector 2"
+                  className="w-full text-xs border border-slate-300 rounded-xl px-3 py-2.5"
+                />
               </div>
             </div>
 

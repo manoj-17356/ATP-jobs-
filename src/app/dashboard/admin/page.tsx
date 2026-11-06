@@ -15,7 +15,6 @@ import {
   getStoredAuditLogs,
 } from '@/lib/services/employer-service';
 import { getStoredApplications } from '@/lib/services/application-service';
-import { ATCHUTHAPURAM_VILLAGES } from '@/lib/data/villages';
 import { JOB_CATEGORIES } from '@/lib/data/categories';
 import { Job, Employer, JobReport, AuditLog } from '@/types';
 import {
@@ -140,7 +139,7 @@ export default function AdminDashboardPage() {
           <div>
             <div className="flex items-center gap-2">
               <h1 className="text-xl sm:text-2xl font-black">
-                AtchuJobs Administration Desk
+                ATP Jobs Administration Desk
               </h1>
               <span className="text-[10px] uppercase font-bold text-emerald-400 bg-emerald-950/80 border border-emerald-700 px-2 py-0.5 rounded-full">
                 Admin Control
@@ -246,8 +245,8 @@ export default function AdminDashboardPage() {
               : 'border-transparent text-slate-500 hover:text-navy-950'
           }`}
         >
-          <MapPin className="w-4 h-4" />
-          Villages & Categories
+          <Briefcase className="w-4 h-4" />
+          Job Categories & Local Scope
         </button>
       </div>
 
@@ -262,7 +261,7 @@ export default function AdminDashboardPage() {
                 {analytics.totalSeekers}
               </span>
               <span className="text-[10px] text-emerald-600 font-semibold mt-1 block">
-                ↑ Registered from 20 Villages
+                ↑ Registered from Atchuthapuram
               </span>
             </div>
 
@@ -653,33 +652,9 @@ export default function AdminDashboardPage() {
         </div>
       )}
 
-      {/* TAB 6: VILLAGES & CATEGORIES MASTER DATA */}
+      {/* TAB 6: JOB CATEGORIES & LOCAL SCOPE */}
       {activeTab === 'villages' && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Villages List */}
-          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs space-y-4">
-            <div className="flex items-center justify-between">
-              <h3 className="font-bold text-sm text-navy-950">
-                Official Villages in Atchuthapuram ({ATCHUTHAPURAM_VILLAGES.length})
-              </h3>
-              <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
-                PIN 531011
-              </span>
-            </div>
-            <div className="max-h-96 overflow-y-auto divide-y divide-slate-100 text-xs">
-              {ATCHUTHAPURAM_VILLAGES.map((v) => (
-                <div key={v.id} className="py-2.5 flex items-center justify-between">
-                  <div>
-                    <span className="font-bold text-slate-900">{v.name}</span>
-                  </div>
-                  <span className="inline-flex items-center gap-1 text-[10px] text-emerald-600 font-semibold">
-                    <CheckCircle2 className="w-3 h-3" /> Active
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-
           {/* Categories List */}
           <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs space-y-4">
             <h3 className="font-bold text-sm text-navy-950">
@@ -694,6 +669,41 @@ export default function AdminDashboardPage() {
                   <span className="font-mono text-[10px] text-slate-400">{cat.slug}</span>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Local Geographic Scope */}
+          <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs space-y-4">
+            <div className="flex items-center justify-between">
+              <h3 className="font-bold text-sm text-navy-950">
+                Local Operating Scope (Atchuthapuram)
+              </h3>
+              <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
+                PIN 531011
+              </span>
+            </div>
+            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-xs space-y-3 text-slate-700">
+              <div className="flex items-center gap-2 text-navy-950 font-bold text-sm">
+                <MapPin className="w-4 h-4 text-red-500" />
+                <span>Atchuthapuram Local Employment Jurisdiction</span>
+              </div>
+              <p className="leading-relaxed">
+                ATP Jobs is dedicated exclusively to employers operating within Atchuthapuram and residents seeking local employment. The platform enforces 100% zero-fee compliance across all categories.
+              </p>
+              <div className="grid grid-cols-2 gap-2 pt-2 text-[11px]">
+                <div className="bg-white p-2.5 rounded-xl border border-slate-200 font-semibold text-slate-800">
+                  ✓ Industrial Corridor
+                </div>
+                <div className="bg-white p-2.5 rounded-xl border border-slate-200 font-semibold text-slate-800">
+                  ✓ Brandix Apparel City
+                </div>
+                <div className="bg-white p-2.5 rounded-xl border border-slate-200 font-semibold text-slate-800">
+                  ✓ Pharma & Chemical Cluster
+                </div>
+                <div className="bg-white p-2.5 rounded-xl border border-slate-200 font-semibold text-slate-800">
+                  ✓ Commercial Establishments
+                </div>
+              </div>
             </div>
           </div>
         </div>

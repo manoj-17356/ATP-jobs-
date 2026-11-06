@@ -45,8 +45,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   // Initialize from localStorage or default to Job Seeker for testing convenience
   useEffect(() => {
     try {
-      const savedUser = localStorage.getItem('atchujobs_current_user');
-      const savedEmployer = localStorage.getItem('atchujobs_current_employer');
+      const savedUser = localStorage.getItem('atpjobs_current_user') || localStorage.getItem('atchujobs_current_user');
+      const savedEmployer = localStorage.getItem('atpjobs_current_employer') || localStorage.getItem('atchujobs_current_employer');
 
       if (savedUser) {
         const parsed = JSON.parse(savedUser);
@@ -57,7 +57,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       } else {
         // Default to seeker on first visit so user can explore dashboards easily
         setUser(SAMPLE_USERS.seeker);
-        localStorage.setItem('atchujobs_current_user', JSON.stringify(SAMPLE_USERS.seeker));
+        localStorage.setItem('atpjobs_current_user', JSON.stringify(SAMPLE_USERS.seeker));
       }
     } catch (err) {
       console.error('Failed to load auth state:', err);
@@ -72,19 +72,19 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (role === 'job_seeker') {
       setUser(SAMPLE_USERS.seeker);
       setEmployer(null);
-      localStorage.setItem('atchujobs_current_user', JSON.stringify(SAMPLE_USERS.seeker));
-      localStorage.removeItem('atchujobs_current_employer');
+      localStorage.setItem('atpjobs_current_user', JSON.stringify(SAMPLE_USERS.seeker));
+      localStorage.removeItem('atpjobs_current_employer');
     } else if (role === 'employer') {
       setUser(SAMPLE_USERS.employer);
       const emp = INITIAL_EMPLOYERS[0];
       setEmployer(emp);
-      localStorage.setItem('atchujobs_current_user', JSON.stringify(SAMPLE_USERS.employer));
-      localStorage.setItem('atchujobs_current_employer', JSON.stringify(emp));
+      localStorage.setItem('atpjobs_current_user', JSON.stringify(SAMPLE_USERS.employer));
+      localStorage.setItem('atpjobs_current_employer', JSON.stringify(emp));
     } else if (role === 'admin') {
       setUser(SAMPLE_USERS.admin);
       setEmployer(null);
-      localStorage.setItem('atchujobs_current_user', JSON.stringify(SAMPLE_USERS.admin));
-      localStorage.removeItem('atchujobs_current_employer');
+      localStorage.setItem('atpjobs_current_user', JSON.stringify(SAMPLE_USERS.admin));
+      localStorage.removeItem('atpjobs_current_employer');
     }
   };
 
@@ -133,8 +133,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     setUser(newUser);
     setEmployer(null);
-    localStorage.setItem('atchujobs_current_user', JSON.stringify(newUser));
-    localStorage.removeItem('atchujobs_current_employer');
+    localStorage.setItem('atpjobs_current_user', JSON.stringify(newUser));
+    localStorage.removeItem('atpjobs_current_employer');
     return { success: true };
   };
 
@@ -185,15 +185,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     setUser(newUser);
     setEmployer(newEmp);
-    localStorage.setItem('atchujobs_current_user', JSON.stringify(newUser));
-    localStorage.setItem('atchujobs_current_employer', JSON.stringify(newEmp));
+    localStorage.setItem('atpjobs_current_user', JSON.stringify(newUser));
+    localStorage.setItem('atpjobs_current_employer', JSON.stringify(newEmp));
     
     // Also save into employers list in storage
     try {
-      const rawEmps = localStorage.getItem('atchujobs_employers');
+      const rawEmps = localStorage.getItem('atpjobs_employers') || localStorage.getItem('atchujobs_employers');
       const emps: Employer[] = rawEmps ? JSON.parse(rawEmps) : INITIAL_EMPLOYERS;
       emps.unshift(newEmp);
-      localStorage.setItem('atchujobs_employers', JSON.stringify(emps));
+      localStorage.setItem('atpjobs_employers', JSON.stringify(emps));
     } catch (e) {
       console.error(e);
     }
@@ -204,22 +204,22 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const logout = () => {
     setUser(null);
     setEmployer(null);
-    localStorage.removeItem('atchujobs_current_user');
-    localStorage.removeItem('atchujobs_current_employer');
+    localStorage.removeItem('atpjobs_current_user');
+    localStorage.removeItem('atpjobs_current_employer');
   };
 
   const updateProfile = (updatedData: Partial<UserProfile>) => {
     if (!user) return;
     const updated = { ...user, ...updatedData, updated_at: new Date().toISOString() };
     setUser(updated);
-    localStorage.setItem('atchujobs_current_user', JSON.stringify(updated));
+    localStorage.setItem('atpjobs_current_user', JSON.stringify(updated));
   };
 
   const updateEmployerProfile = (updatedData: Partial<Employer>) => {
     if (!employer) return;
     const updated = { ...employer, ...updatedData, updated_at: new Date().toISOString() };
     setEmployer(updated);
-    localStorage.setItem('atchujobs_current_employer', JSON.stringify(updated));
+    localStorage.setItem('atpjobs_current_employer', JSON.stringify(updated));
   };
 
   return (

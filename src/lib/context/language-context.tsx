@@ -70,13 +70,13 @@ interface Translations {
 }
 
 const translations: Translations = {
-  brandName: 'AtchuJobs',
+  brandName: 'ATP Jobs',
   tagline: 'Local Jobs. Local Opportunities.',
   notice: 'Exclusively for Atchuthapuram',
   navHome: 'Home',
   navJobs: 'Find Jobs',
   navCategories: 'Categories',
-  navVillages: 'Villages',
+  navVillages: 'Atchuthapuram',
   navEmployers: 'Companies',
   navPostJob: 'Post a Job',
   navLogin: 'Login',
@@ -85,21 +85,21 @@ const translations: Translations = {
   navLogout: 'Sign Out',
   
   heroHeading: 'Find Verified Jobs in Atchuthapuram',
-  heroSubheading: 'Direct recruitment from industrial units, Brandix Apparel City, Pharma SEZ, and local commercial enterprises. 100% Zero-fee guarantee.',
+  heroSubheading: 'Direct recruitment from industrial units, Brandix Apparel City, Pharma cluster, and local commercial enterprises. 100% Zero-fee guarantee.',
   searchPlaceholder: 'Job title, skill (e.g. QC Chemist, CNC Operator, Tally)',
-  allVillages: 'All Villages in Atchuthapuram',
+  allVillages: 'Atchuthapuram (All Areas)',
   allCategories: 'All Job Categories',
   searchBtn: 'Search Jobs',
   
   statJobs: 'Active Verified Jobs',
-  statEmployers: 'Verified SEZ & Local Units',
-  statVillages: 'Villages Covered',
+  statEmployers: 'Verified Employers',
+  statVillages: 'Atchuthapuram Focused',
   statZeroFee: 'Zero Candidate Fee',
   
   badgeVerifiedEmployer: 'Verified Employer',
   badgeZeroFee: '100% Free - No Fees',
   badgeApprovedJob: 'Admin Approved',
-  badgeGovtApproved: 'SEZ / Local Unit',
+  badgeGovtApproved: 'Verified Local Unit',
   
   btnApply: 'Apply Now',
   btnApplied: 'Applied',
@@ -110,13 +110,13 @@ const translations: Translations = {
   btnViewDetails: 'View Details',
   
   zeroFeeNoticeTitle: 'Zero-Tolerance Anti-Fraud Guarantee',
-  zeroFeeNoticeText: 'AtchuJobs strictly prohibits any employer from charging application fees, uniform deposits, or training charges. Every posting is reviewed by our moderation desk.',
+  zeroFeeNoticeText: 'ATP Jobs strictly prohibits any employer from charging application fees, uniform deposits, or training charges. Every posting is reviewed by our moderation desk.',
   
   secFeaturedJobs: 'Latest Verified Local Vacancies',
   secPopularCategories: 'Explore Jobs by Category',
   secTopEmployers: 'Prominent Employers in Atchuthapuram',
-  secWhyAtchuJobs: 'Why Job Seekers & Employers Trust AtchuJobs',
-  secVillagesCovered: 'Villages Covered in Atchuthapuram',
+  secWhyAtchuJobs: 'Why Job Seekers & Employers Trust ATP Jobs',
+  secVillagesCovered: 'Jobs in Atchuthapuram',
   
   filterTitle: 'Filter Opportunities',
   filterJobType: 'Job Type',

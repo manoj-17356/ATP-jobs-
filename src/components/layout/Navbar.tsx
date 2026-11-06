@@ -37,7 +37,6 @@ export default function Navbar() {
   const navLinks = [
     { href: '/', label: t.navHome },
     { href: '/jobs', label: t.navJobs },
-    { href: '/villages', label: t.navVillages },
     { href: '/companies', label: t.navEmployers },
   ];
 
@@ -108,9 +107,9 @@ export default function Navbar() {
               </div>
               <div>
                 <span className="text-xl font-black tracking-tight text-navy-900 flex items-center gap-1">
-                  Atchu<span className="text-blue-600">Jobs</span>
+                  ATP<span className="text-blue-600">Jobs</span>
                   <span className="text-[10px] uppercase font-bold tracking-widest text-emerald-700 bg-emerald-50 border border-emerald-200 px-1.5 py-0.2 rounded">
-                    ATP
+                    Atchuthapuram
                   </span>
                 </span>
                 <p className="text-[10px] font-medium text-slate-500 leading-none">

@@ -14,7 +14,6 @@ import {
   getApplicationsForEmployer,
   updateApplicationStatus,
 } from '@/lib/services/application-service';
-import { ATCHUTHAPURAM_VILLAGES } from '@/lib/data/villages';
 import { JOB_CATEGORIES } from '@/lib/data/categories';
 import { Job, Application, Employer, EmployerDocument } from '@/types';
 import {
@@ -35,6 +34,8 @@ import {
   Eye,
   Bus,
   FileCheck,
+  Sparkles,
+  Zap,
 } from 'lucide-react';
 
 export default function EmployerDashboardPage() {
@@ -58,9 +59,8 @@ export default function EmployerDashboardPage() {
 
   // Post Job Form State
   const [newTitle, setNewTitle] = useState('');
-  const [newTitleTe, setNewTitleTe] = useState('');
   const [newCategoryId, setNewCategoryId] = useState(JOB_CATEGORIES[0].id);
-  const [newVillageName, setNewVillageName] = useState('Haripalem');
+  const [newVillageName, setNewVillageName] = useState('Atchuthapuram');
   const [newJobType, setNewJobType] = useState<Job['job_type']>('Full-time');
   const [newShiftType, setNewShiftType] = useState<Job['shift_type']>('Rotational 3-shift');
   const [newVacancies, setNewVacancies] = useState(3);
@@ -77,6 +77,30 @@ export default function EmployerDashboardPage() {
   const [newDescription, setNewDescription] = useState('');
   const [newSkills, setNewSkills] = useState('Machine Operation, Safety Protocols, Quality Inspection');
   const [jobCreatedSuccess, setJobCreatedSuccess] = useState(false);
+
+  const applyJobTemplate = (template: {
+    title: string;
+    categoryId: string;
+    shiftType: Job['shift_type'];
+    salaryMin: number;
+    salaryMax: number;
+    vacancies: number;
+    skills: string;
+    description: string;
+    location: string;
+    jobType?: Job['job_type'];
+  }) => {
+    setNewTitle(template.title);
+    setNewCategoryId(template.categoryId);
+    setNewShiftType(template.shiftType);
+    setNewSalaryMin(template.salaryMin);
+    setNewSalaryMax(template.salaryMax);
+    setNewVacancies(template.vacancies);
+    setNewSkills(template.skills);
+    setNewDescription(template.description);
+    setNewWorkLocation(template.location);
+    if (template.jobType) setNewJobType(template.jobType);
+  };
 
   // Document Upload State
   const [docType, setDocType] = useState<EmployerDocument['document_type']>('gstin');
@@ -114,42 +138,39 @@ export default function EmployerDashboardPage() {
       .map((s) => s.trim())
       .filter(Boolean);
 
-    const isVerified = currentEmp.status === 'verified';
-
     const created = createJobPosting({
       employer_id: currentEmp.id,
       category_id: newCategoryId,
       village_id: 'v-1',
       title: newTitle,
-      title_te: newTitleTe,
-      description: newDescription,
+      description: newDescription || `Urgent opening for ${newTitle} at ${currentEmp.company_name}, Atchuthapuram. Qualified local candidates will receive prompt consideration.`,
       responsibilities: [
-        'Adhere to factory safety and production schedules',
-        'Maintain daily logs and coordinate with shift supervisor',
-        'Ensure clean work practices within the plant',
+        'Adhere to workplace safety and scheduled targets',
+        'Maintain daily logs and report to shift lead',
+        'Ensure clean and disciplined work practices',
       ],
       requirements: [
         `Education: ${newEducation}`,
         `Experience: ${newExperience}`,
         'Preference for residents of Atchuthapuram',
       ],
-      skills_required: skillsArray,
+      skills_required: skillsArray.length > 0 ? skillsArray : ['Operations', 'Teamwork', 'Safety Compliance'],
       job_type: newJobType,
       shift_type: newShiftType,
-      vacancies_count: Number(newVacancies),
+      vacancies_count: Number(newVacancies) || 1,
       experience_level: newExperience,
       education_required: newEducation,
-      salary_min: Number(newSalaryMin),
-      salary_max: Number(newSalaryMax),
+      salary_min: Number(newSalaryMin) || 15000,
+      salary_max: Number(newSalaryMax) || 22000,
       salary_type: 'monthly',
       salary_negotiable: false,
       has_bus_facility: newHasBus,
       has_canteen_facility: newHasCanteen,
       has_esi_pf: newHasEsiPf,
       has_accommodation: false,
-      work_location: newWorkLocation,
-      village_name: newVillageName,
-      status: isVerified ? 'active' : 'pending_approval', // Verified employers can publish, others pending
+      work_location: newWorkLocation || 'Atchuthapuram',
+      village_name: newVillageName || 'Atchuthapuram',
+      status: 'active', // Fast publish directly
       zero_fee_verified: true,
       expires_at: new Date(Date.now() + 60 * 24 * 60 * 60 * 1000).toISOString(),
     });
@@ -566,28 +587,142 @@ export default function EmployerDashboardPage() {
       {/* TAB 3: CREATE JOB POSTING */}
       {activeTab === 'post-job' && (
         <div className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 space-y-6">
-          <div className="border-b border-slate-100 pb-4">
-            <h2 className="text-lg font-bold text-navy-950">
-              Post Vacancy in Atchuthapuram
-            </h2>
-            <p className="text-xs text-slate-500">
-              Reach local village residents. All postings undergo review by the moderation desk.
-            </p>
+          <div className="border-b border-slate-100 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <h2 className="text-lg font-bold text-navy-950 flex items-center gap-2">
+                <Sparkles className="w-5 h-5 text-amber-500" />
+                Post Vacancy in Atchuthapuram
+              </h2>
+              <p className="text-xs text-slate-500 mt-0.5">
+                Quick 1-minute job posting for employers. Reaches verified local candidates in Atchuthapuram.
+              </p>
+            </div>
+            <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full self-start sm:self-auto">
+              ✓ Instant Live Publishing
+            </span>
           </div>
 
           {jobCreatedSuccess && (
-            <div className="p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-xs font-semibold text-emerald-800 flex items-center gap-2">
-              <CheckCircle2 className="w-5 h-5 text-emerald-600" />
-              Vacancy published successfully! Redirecting to management tab...
+            <div className="p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-xs font-semibold text-emerald-800 flex items-center gap-2 animate-in fade-in">
+              <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
+              <span>Vacancy published successfully! It is now live on ATP Jobs for candidates. Redirecting...</span>
             </div>
           )}
+
+          {/* Quick-Fill 1-Click Templates Bar */}
+          <div className="p-4 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200/80 rounded-2xl space-y-2.5">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-bold text-navy-950 flex items-center gap-1.5">
+                <Zap className="w-4 h-4 text-amber-500" />
+                Fast 1-Click Job Templates (Auto-fills entire form):
+              </span>
+              <span className="text-[10px] text-slate-500 font-medium">Click to autofill</span>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <button
+                type="button"
+                onClick={() =>
+                  applyJobTemplate({
+                    title: 'CNC / Production Machine Operator',
+                    categoryId: JOB_CATEGORIES[0].id,
+                    shiftType: 'Rotational 3-shift',
+                    salaryMin: 18000,
+                    salaryMax: 24000,
+                    vacancies: 5,
+                    skills: 'Machine Operation, Safety Protocols, Quality Inspection, Line Maintenance',
+                    description: 'Operate automated production line machinery according to safety protocols. Maintain shift documentation and inspect product dimensions in Atchuthapuram plant.',
+                    location: 'Atchuthapuram Industrial Corridor',
+                  })
+                }
+                className="px-3 py-1.5 bg-white hover:bg-blue-600 hover:text-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-800 shadow-xs transition"
+              >
+                🏭 Machine Operator
+              </button>
+              <button
+                type="button"
+                onClick={() =>
+                  applyJobTemplate({
+                    title: 'Quality Control (QC) Chemist',
+                    categoryId: JOB_CATEGORIES[3].id,
+                    shiftType: 'Day',
+                    salaryMin: 22000,
+                    salaryMax: 30000,
+                    vacancies: 2,
+                    skills: 'HPLC, UV Spectrophotometry, Wet Chemistry, cGMP, Lab Documentation',
+                    description: 'Perform chemical sampling and analytical assay testing of raw materials and active pharmaceutical ingredients under standard cGMP regulations.',
+                    location: 'Pharma Cluster, Atchuthapuram',
+                  })
+                }
+                className="px-3 py-1.5 bg-white hover:bg-blue-600 hover:text-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-800 shadow-xs transition"
+              >
+                🧪 QC Chemist
+              </button>
+              <button
+                type="button"
+                onClick={() =>
+                  applyJobTemplate({
+                    title: 'Industrial Security Guard',
+                    categoryId: JOB_CATEGORIES[6].id,
+                    shiftType: 'Rotational 3-shift',
+                    salaryMin: 14000,
+                    salaryMax: 17500,
+                    vacancies: 4,
+                    skills: 'Gate Security, Visitor Logging, CCTV Monitoring, Campus Patrolling',
+                    description: 'Maintain safety of industrial plant premises, verify vehicle gate passes, maintain visitor logbooks, and monitor material movements.',
+                    location: 'Atchuthapuram Industrial Corridor',
+                  })
+                }
+                className="px-3 py-1.5 bg-white hover:bg-blue-600 hover:text-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-800 shadow-xs transition"
+              >
+                🛡️ Security Guard
+              </button>
+              <button
+                type="button"
+                onClick={() =>
+                  applyJobTemplate({
+                    title: 'Accounts & Tally Executive',
+                    categoryId: JOB_CATEGORIES[5].id,
+                    shiftType: 'General',
+                    salaryMin: 20000,
+                    salaryMax: 28000,
+                    vacancies: 1,
+                    skills: 'Tally Prime, GST Billing, Vendor Invoicing, Bank Reconciliation',
+                    description: 'Handle factory store billing, day-to-day accounts bookkeeping, GST sales invoices, petty cash management, and supplier accounts reconciliation.',
+                    location: 'Main Road, Atchuthapuram',
+                  })
+                }
+                className="px-3 py-1.5 bg-white hover:bg-blue-600 hover:text-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-800 shadow-xs transition"
+              >
+                📊 Accountant
+              </button>
+              <button
+                type="button"
+                onClick={() =>
+                  applyJobTemplate({
+                    title: 'Electrical & Maintenance Technician',
+                    categoryId: JOB_CATEGORIES[2].id,
+                    shiftType: 'Rotational 3-shift',
+                    salaryMin: 18000,
+                    salaryMax: 26000,
+                    vacancies: 3,
+                    skills: 'Industrial Wiring, Motors, LT/HT Panels, Breakdown Troubleshooting',
+                    description: 'Carry out planned preventive maintenance on electrical motors, sub-panels, switchgear, and utility equipment across factory floors.',
+                    location: 'Atchuthapuram Industrial Corridor',
+                  })
+                }
+                className="px-3 py-1.5 bg-white hover:bg-blue-600 hover:text-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-800 shadow-xs transition"
+              >
+                ⚡ Electrician / Fitter
+              </button>
+            </div>
+          </div>
 
           <form onSubmit={handlePostJob} className="space-y-5">
             {/* Zero fee anti-fraud pledge banner */}
             <div className="p-3 bg-blue-50 border border-blue-200 rounded-xl text-xs text-blue-900 flex items-start gap-2">
               <ShieldCheck className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
               <div>
-                <strong>Zero-Fee Compliance Pledge:</strong> By posting this vacancy on AtchuJobs, you certify that no application fee, uniform charge, interview fee, or training security deposit will be charged to candidates at any stage.
+                <strong>Zero-Fee Compliance Pledge:</strong> By posting this vacancy on ATP Jobs, you certify that no application fee, uniform charge, interview fee, or training security deposit will be charged to candidates at any stage.
               </div>
             </div>
 
@@ -600,7 +735,7 @@ export default function EmployerDashboardPage() {
                 required
                 value={newTitle}
                 onChange={(e) => setNewTitle(e.target.value)}
-                placeholder="e.g. Senior QC Chemist / CNC Machine Operator"
+                placeholder="e.g. Senior QC Chemist / Machine Operator / Accountant"
                 className="w-full text-xs border border-slate-300 rounded-xl px-3 py-2.5 focus:ring-2 focus:ring-blue-600"
               />
             </div>
@@ -625,18 +760,21 @@ export default function EmployerDashboardPage() {
 
               <div>
                 <label className="block text-xs font-bold text-slate-800 mb-1">
-                  Location / Village <span className="text-red-500">*</span>
+                  Work Location in Atchuthapuram <span className="text-red-500">*</span>
                 </label>
                 <select
                   value={newVillageName}
-                  onChange={(e) => setNewVillageName(e.target.value)}
+                  onChange={(e) => {
+                    setNewVillageName(e.target.value);
+                    setNewWorkLocation(`${e.target.value}, Atchuthapuram`);
+                  }}
                   className="w-full text-xs border border-slate-300 rounded-xl px-3 py-2.5 bg-white font-medium"
                 >
-                  {ATCHUTHAPURAM_VILLAGES.map((v) => (
-                    <option key={v.id} value={v.name}>
-                      {v.name}
-                    </option>
-                  ))}
+                  <option value="Atchuthapuram">Atchuthapuram (Central)</option>
+                  <option value="Industrial Corridor">Industrial Corridor</option>
+                  <option value="Brandix Apparel City">Brandix Apparel City</option>
+                  <option value="Pharma Cluster">Pharma Cluster</option>
+                  <option value="Commercial Area">Commercial Area / Market</option>
                 </select>
               </div>
 
@@ -652,7 +790,7 @@ export default function EmployerDashboardPage() {
                   <option value="General">General Shift (9 AM - 6 PM)</option>
                   <option value="Day">Day Shift</option>
                   <option value="Night">Night Shift</option>
-                  <option value="Rotational 3-shift">Rotational 3-shift (SEZ Standard)</option>
+                  <option value="Rotational 3-shift">Rotational 3-shift</option>
                 </select>
               </div>
             </div>
@@ -699,7 +837,7 @@ export default function EmployerDashboardPage() {
             {/* Local Perks Toggles */}
             <div className="p-4 bg-slate-50 border border-slate-200 rounded-2xl space-y-2">
               <label className="block text-xs font-bold text-slate-800 mb-1">
-                Local SEZ Facilities & Perks Provided
+                Local Facilities & Workplace Perks Provided
               </label>
               <div className="flex flex-wrap gap-4 text-xs">
                 <label className="flex items-center gap-2 cursor-pointer font-semibold text-slate-800">
@@ -735,12 +873,27 @@ export default function EmployerDashboardPage() {
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-slate-800 mb-1">
-                Detailed Job Description <span className="text-red-500">*</span>
-              </label>
+              <div className="flex items-center justify-between mb-1">
+                <label className="block text-xs font-bold text-slate-800">
+                  Job Description <span className="text-red-500">*</span>
+                </label>
+                {!newDescription && newTitle && (
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setNewDescription(
+                        `We are hiring a qualified ${newTitle} for our facility in Atchuthapuram. The role involves standard operational duties, safety compliance, and team coordination. Local residents preferred with immediate availability.`
+                      )
+                    }
+                    className="text-[11px] text-blue-600 font-semibold hover:underline"
+                  >
+                    ✨ Auto-Fill Description
+                  </button>
+                )}
+              </div>
               <textarea
                 required
-                rows={4}
+                rows={3}
                 value={newDescription}
                 onChange={(e) => setNewDescription(e.target.value)}
                 placeholder="Explain the work responsibilities, plant safety, shift expectations..."
@@ -756,36 +909,38 @@ export default function EmployerDashboardPage() {
                 type="text"
                 value={newSkills}
                 onChange={(e) => setNewSkills(e.target.value)}
-                placeholder="e.g. HPLC, Titration, Quality Control, Good Documentation"
+                placeholder="e.g. Operations, Quality Control, Documentation, Safety"
                 className="w-full text-xs border border-slate-300 rounded-xl px-3 py-2.5"
               />
             </div>
 
             <div>
               <label className="block text-xs font-bold text-slate-800 mb-1">
-                Plant / Office Location in Atchuthapuram
+                Specific Plant / Office Address in Atchuthapuram
               </label>
               <input
                 type="text"
                 value={newWorkLocation}
                 onChange={(e) => setNewWorkLocation(e.target.value)}
+                placeholder="e.g. Plot 15, Industrial Corridor, Atchuthapuram"
                 className="w-full text-xs border border-slate-300 rounded-xl px-3 py-2.5"
               />
             </div>
 
-            <div className="flex justify-end gap-3 pt-4">
+            <div className="flex justify-end gap-3 pt-4 border-t border-slate-100">
               <button
                 type="button"
                 onClick={() => setActiveTab('jobs')}
-                className="px-5 py-2.5 border border-slate-300 text-slate-700 text-xs font-semibold rounded-xl"
+                className="px-5 py-2.5 border border-slate-300 text-slate-700 text-xs font-semibold rounded-xl hover:bg-slate-50 transition"
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                className="px-8 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-xl shadow-md transition"
+                className="px-8 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-xl shadow-md transition flex items-center gap-1.5"
               >
-                Publish Job Vacancy
+                <Sparkles className="w-4 h-4" />
+                Publish Job Vacancy Instantly
               </button>
             </div>
           </form>

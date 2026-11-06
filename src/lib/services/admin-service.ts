@@ -2,7 +2,6 @@ import { getStoredJobs } from './job-service';
 import { getStoredEmployers } from './employer-service';
 import { getStoredApplications } from './application-service';
 import { getAllReports } from './job-service';
-import { ATCHUTHAPURAM_VILLAGES } from '@/lib/data/villages';
 import { JOB_CATEGORIES } from '@/lib/data/categories';
 
 export interface AdminAnalytics {
@@ -47,16 +46,19 @@ export function getAdminAnalytics(): AdminAnalytics {
     count,
   }));
 
-  // Breakdown by village
-  const villageCounts: Record<string, number> = {};
-  ATCHUTHAPURAM_VILLAGES.slice(0, 10).forEach((v) => {
-    villageCounts[v.name] = 0;
-  });
+  // Breakdown by location
+  const areaCounts: Record<string, number> = {
+    'Atchuthapuram': 0,
+    'Industrial Corridor': 0,
+    'Brandix Apparel City': 0,
+    'Pharma Cluster': 0,
+  };
   jobs.forEach((j) => {
-    villageCounts[j.village_name] = (villageCounts[j.village_name] || 0) + 1;
+    const loc = j.village_name || 'Atchuthapuram';
+    areaCounts[loc] = (areaCounts[loc] || 0) + 1;
   });
 
-  const jobsByVillage = Object.entries(villageCounts).map(([name, count]) => ({
+  const jobsByVillage = Object.entries(areaCounts).map(([name, count]) => ({
     name,
     count,
   }));

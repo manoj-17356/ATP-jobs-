@@ -4,7 +4,6 @@ import React from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/lib/context/language-context';
 import { Briefcase, ShieldCheck, MapPin, Phone, Mail, AlertTriangle } from 'lucide-react';
-import { ATCHUTHAPURAM_VILLAGES } from '@/lib/data/villages';
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -32,11 +31,11 @@ export default function Footer() {
                 <Briefcase className="w-5 h-5" />
               </div>
               <span className="text-xl font-black text-white">
-                Atchu<span className="text-blue-400">Jobs</span>
+                ATP<span className="text-blue-400">Jobs</span>
               </span>
             </div>
             <p className="text-xs text-slate-400 max-w-sm leading-relaxed">
-              Dedicated local employment portal exclusively for Atchuthapuram. Connecting local talent with SEZ manufacturing units, Brandix Apparel City, Pharma clusters, and regional commercial enterprises.
+              Dedicated local employment portal exclusively for Atchuthapuram. Connecting local talent with manufacturing units, Brandix Apparel City, Pharma clusters, and regional commercial enterprises.
             </p>
             <div className="flex items-center gap-2 text-xs text-emerald-400 font-semibold bg-emerald-950/50 border border-emerald-800/60 p-2 rounded-lg max-w-sm">
               <ShieldCheck className="w-4 h-4 shrink-0" />
@@ -44,25 +43,40 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Key Villages */}
+          {/* Top Job Categories */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-slate-200 mb-3">
-              Key Local Villages
+              Top Job Categories
             </h4>
             <ul className="space-y-1.5 text-xs text-slate-400">
-              {ATCHUTHAPURAM_VILLAGES.slice(0, 6).map((v) => (
-                <li key={v.id}>
-                  <Link
-                    href={`/jobs?village=${encodeURIComponent(v.name)}`}
-                    className="hover:text-blue-400 transition"
-                  >
-                    {v.name}
-                  </Link>
-                </li>
-              ))}
               <li>
-                <Link href="/villages" className="text-blue-400 font-medium hover:underline">
-                  View all 20 villages &rarr;
+                <Link href="/jobs?category=manufacturing" className="hover:text-blue-400 transition">
+                  Manufacturing & Production
+                </Link>
+              </li>
+              <li>
+                <Link href="/jobs?category=pharma" className="hover:text-blue-400 transition">
+                  Pharma & Chemicals
+                </Link>
+              </li>
+              <li>
+                <Link href="/jobs?category=engineering" className="hover:text-blue-400 transition">
+                  Engineering & Technical
+                </Link>
+              </li>
+              <li>
+                <Link href="/jobs?category=it-computer" className="hover:text-blue-400 transition">
+                  IT & Computer Support
+                </Link>
+              </li>
+              <li>
+                <Link href="/jobs?category=skilled-workers" className="hover:text-blue-400 transition">
+                  Skilled Trades & Technicians
+                </Link>
+              </li>
+              <li>
+                <Link href="/jobs" className="text-blue-400 font-medium hover:underline">
+                  View all categories &rarr;
                 </Link>
               </li>
             </ul>
@@ -126,7 +140,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-6 border-t border-navy-800 text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p>© 2026 AtchuJobs. All rights reserved. Exclusively for Atchuthapuram.</p>
+          <p>© 2026 ATP Jobs. All rights reserved. Exclusively for Atchuthapuram.</p>
           <div className="flex items-center space-x-4">
             <span className="text-slate-400">Security & Privacy First</span>
             <span>•</span>

@@ -1,4 +1,4 @@
-# 🏢 AtchuJobs – Local Job Portal
+# 🏢 ATP Jobs – Local Job Portal
 ### *Local Jobs. Local Opportunities.*
 **Exclusively focused on Atchuthapuram**
 
@@ -6,16 +6,16 @@
 
 ## 📌 Executive Summary
 
-**AtchuJobs** is a modern, responsive, production-ready employment platform built exclusively for **Atchuthapuram**. It connects local job seekers with verified employers across the local industrial corridor, apparel clusters, pharma & chemical units, engineering fabrication plants, and commercial establishments.
+**ATP Jobs** is a modern, responsive, production-ready employment platform built exclusively for **Atchuthapuram**. It connects local job seekers directly with verified employers across the industrial corridor, Brandix Apparel City, pharma & chemical clusters, engineering fabrication plants, and local commercial establishments.
 
-Inspired by LinkedIn, Naukri, and Indeed, AtchuJobs features an original design with a **clean white background and navy blue corporate theme**, English language interface, an anti-fraud verification system, and a **strict Zero-Tolerance Fake Job & Fee Prevention policy**.
+Inspired by LinkedIn, Naukri, and Indeed, ATP Jobs features an original design with a **clean white background and navy blue corporate theme**, English language interface, an anti-fraud verification system, streamlined 1-click vacancy posting for businesses, and a **strict Zero-Tolerance Fake Job & Fee Prevention policy**.
 
 ---
 
 ## 🛠️ Technology Stack
 
 - **Frontend & Full-stack Framework:** Next.js 14 (App Router), React 18, TypeScript
-- **Styling & UI:** Tailwind CSS (Navy Blue Theme, Custom Badges, Responsive Layouts)
+- **Styling & UI:** Tailwind CSS (Navy Blue Corporate Theme, White Background, Custom Badges, Responsive Layouts)
 - **Icons:** Lucide React
 - **Backend & Database:** Next.js API Routes / Server Actions + Supabase PostgreSQL
 - **Security:** Supabase Row Level Security (RLS) policies, Role-Based Access Control (RBAC)
@@ -26,37 +26,43 @@ Inspired by LinkedIn, Naukri, and Indeed, AtchuJobs features an original design 
 ## 👥 Three Complete User Roles
 
 ### 1. 👨‍💼 Job Seekers
-- **Registration & Profile:** Create professional profile with name, phone, native village in Atchuthapuram, headline, bio, education, experience, and skills chips.
+- **Registration & Profile:** Create professional profile with name, phone, location in Atchuthapuram, headline, bio, education, experience, and skills chips.
 - **Resume Management:** Upload PDF resume, preview CV, and attach to applications.
-- **Search & Filters:** Search jobs by keywords, skills, salary, job type, shift type, and **native village filter (all 20 villages in Atchuthapuram)**.
-- **Workplace Perks Filtering:** Filter jobs that offer **Free Bus Transportation** across local villages or subsidized canteen facilities.
+- **Search & Filters:** Search jobs by keywords, popular roles, category, salary, job type, and shift type.
+- **Workplace Perks Filtering:** Filter jobs that offer **Free Bus Transportation** across local routes or subsidized canteen facilities.
 - **Saved Jobs:** Bookmark interesting vacancies to apply later.
 - **Application Status Lifecycle:** Track live status progression across all stages:
   $$\text{Submitted} \longrightarrow \text{Under Review} \longrightarrow \text{Shortlisted} \longrightarrow \text{Interview Scheduled} \longrightarrow \text{Selected / Rejected}$$
 - **Interview Notifications:** View interview date, venue, gate pass instructions, and contact details directly in the dashboard.
 
-### 2. 🏭 Employers
-- **Company Profile:** Register legal business name, plant location, industrial zone (e.g. Sector 1/2, Apparel City), website, contact info, and logo.
-- **Business Verification:** Mandatory upload of **GSTIN**, **PAN**, **Factory License**, or Trade License. Unverified employers cannot publish live vacancies until admin clearance.
-- **Post Vacancies:** Complete posting form specifying shift type (General, Day, Night, Rotational 3-shift), vacancy count, education, salary range, bus facility routes, and **mandatory zero-fee pledge**.
-- **Applicant Pipeline:** Review candidate profiles, native village, and PDF resumes.
-- **Status Management:** Shortlist candidates, reject with feedback, or open the **Interview Scheduler Modal** to assign interview date/time, security gate pass instructions, and plant venue.
+### 2. 🏭 Employers (Reduced Job Post Difficulty)
+- **1-Click Popular Job Templates:** Instantly pre-fill the entire posting form with 1 click for:
+  - 🏭 *Machine Operator*
+  - 🧪 *QC Chemist*
+  - 🛡️ *Security Guard*
+  - 📊 *Accountant / Tally Executive*
+  - ⚡ *Electrician / Maintenance Technician*
+- **Auto-Generate Job Descriptions:** Single-click auto-generation of professional job specifications and responsibilities.
+- **Instant Live Publishing:** Verified employers can publish vacancies live in under 1 minute.
+- **Company Profile & Documents:** Register business name, plant address, upload GSTIN or Factory License for green verified badge.
+- **Applicant Pipeline:** Review candidate profiles and PDF resumes.
+- **Status Management & Interview Scheduling:** Shortlist candidates, reject with feedback, or open the **Interview Scheduler Modal** to assign interview date/time, security gate pass instructions, and plant venue.
 
 ### 3. 🛡️ Admin
 - **Live Database KPIs:** Real-time analytics for total job seekers, registered employers, verified vs pending employers, active jobs, pending jobs, reported fake jobs, and total applications.
-- **Interactive Visualizations:** Jobs breakdown by **12 local categories** and **20 Atchuthapuram villages**.
+- **Interactive Visualizations:** Jobs breakdown by **12 local categories** and Atchuthapuram industrial areas.
 - **Company Verification:** Inspect uploaded business documents (GSTIN/Factory License) and approve verification (granting the green verified badge) or reject.
-- **Job Approval Queue:** Review every vacancy for realistic salary, genuine factory address, and zero-fee compliance before publishing live.
+- **Job Approval Queue:** Review vacancies for realistic salary, genuine factory address, and zero-fee compliance.
 - **Fake Job Investigation:** Investigate reports filed by job seekers (e.g. demands for registration deposits, fake company claims). One-click **suspend fraudulent employer** and blacklist accounts.
-- **Master Data Desk:** View and manage official Atchuthapuram villages and categories.
+- **Categories & Scope Desk:** Manage official 12 categories and local operational boundaries.
 - **Immutable Audit Trail:** Complete audit logs recording all admin approvals, suspensions, and verifications with timestamps and IP records.
 
 ---
 
 ## 🛡️ Fake Job Prevention & Zero-Fee Guarantee
 
-1. **Mandatory Employer Verification:** Employers must submit valid business registration proof before their vacancies are published to the public.
-2. **Every Vacancy Moderated:** All job postings undergo review by the admin moderation desk.
+1. **Mandatory Employer Verification:** Employers submit business registration proof (GSTIN/Factory license) before long-term vacancy posting.
+2. **Every Vacancy Moderated:** All job postings undergo review by the moderation desk.
 3. **Dual Verification Badges:**
    - 🛡️ **Verified Employer Badge:** Indicates corporate GSTIN/Factory registration has been validated.
    - 📋 **Admin Approved Vacancy Badge:** Indicates work location, salary realism, and job description have passed administrative scrutiny.
@@ -68,29 +74,13 @@ Inspired by LinkedIn, Naukri, and Indeed, AtchuJobs features an original design 
 
 ---
 
-## 🌐 20 Official Villages in Atchuthapuram
+## 📍 Local Operating Areas in Atchuthapuram
 
-AtchuJobs natively supports all official villages in Atchuthapuram (PIN: 531011 & 531033):
-1. **Atchuthapuram**
-2. **Haripalem**
-3. **Duppituru**
-4. **Kondakarla**
-5. **Maduturu**
-6. **Pudimadaka**
-7. **Veduruvada**
-8. **Somavaram**
-9. **Thimmarajupeta**
-10. **Yellapuvanipalem**
-11. **Dibbapalem**
-12. **Dosuru**
-13. **Ugginapalem**
-14. **Moturupalem**
-15. **Nukalapalem**
-16. **Tantadi**
-17. **Pedapadu**
-18. **Chodapalle**
-19. **Rayavaram**
-20. **Jaggannapeta**
+ATP Jobs focuses on the key employment hubs across Atchuthapuram (PIN: 531011):
+- **Industrial Corridor:** Heavy engineering, fabrication, and manufacturing facilities.
+- **Brandix Apparel City (BIAC):** Garment production, sewing, QA, and logistics.
+- **Pharma Cluster:** Active pharmaceutical ingredient (API) synthesis, QA/QC, and chemical processing.
+- **Central Town & Commercial Junction:** Retail, clinics, billing, transport, and office administration.
 
 ---
 
@@ -138,42 +128,47 @@ npm start
 
 ## 🧪 Step-by-Step Testing Guide
 
-AtchuJobs includes a **Quick Persona Switcher** in the top navigation bar, allowing you to instantaneously switch between all 3 roles without relogging!
+ATP Jobs includes a **Quick Persona Switcher** in the top navigation bar, allowing you to instantaneously switch between all 3 roles without relogging!
 
 ### Test Scenario 1: Job Seeker Journey (👨‍💼 Ramesh Varma)
 1. In the top bar, click **"Seeker"** (or login at `/login` using the one-click *Job Seeker* button).
 2. Visit the **Home Page (`/`)** and use the **Job Search Bar**:
-   - Filter by Village: select **"Haripalem"** or **"Atchuthapuram"**.
+   - Filter by Area: select **"Industrial Corridor"** or **"Atchuthapuram (All Areas)"**.
    - Filter by Category: select **"Pharma"** or **"Manufacturing"**.
+   - Try the popular search tags: click **"Machine Operator"** or **"QC Chemist"**.
 3. On a Job Card:
    - Click the **Bookmark** icon to save the vacancy.
    - Click **"View Details"** to review the full job specifications.
-   - Click **"Apply Now"**: confirm candidate phone, select native village, attach resume, and submit.
+   - Click **"Apply Now"**: confirm candidate phone, enter location in Atchuthapuram, attach resume, and submit.
 4. Navigate to **"Dashboard"** (`/dashboard/seeker`):
    - In **My Applications**, observe the lifecycle progress bar (*Submitted $\rightarrow$ Shortlisted $\rightarrow$ Interview*).
    - Review the scheduled interview for *Laurus Bio-Pharma* with security gate pass instructions.
    - Switch to **Resume & Credentials** tab: click *Edit Credentials*, add a new skill chip (e.g. *CNC Machining*), update phone, and click *Save Profile Changes*.
    - Switch to **Saved Jobs** tab to view bookmarked positions.
 
-### Test Scenario 2: Employer Journey (🏭 Laurus Bio-Pharma / HR)
+### Test Scenario 2: Employer Journey with Streamlined Job Posting (🏭 Laurus Bio-Pharma / HR)
 1. In the top bar, click **"Employer"** (or login as Employer).
 2. Navigate to **Employer Dashboard (`/dashboard/employer`)**:
-   - **Manage Vacancies tab:** view active jobs, applicants count, and closing controls.
-   - **Applicant Pipeline tab:** filter by job title; see *Ramesh Varma* from Haripalem.
+   - Click **"Post Vacancy"** tab (`/dashboard/employer?tab=post-job`).
+   - Notice the **1-Click Job Templates** at the top:
+     - Click **"🏭 Machine Operator"** or **"🧪 QC Chemist"**.
+     - Notice how the entire form (title, category, shift, salary range ₹18k-₹24k, vacancies, perks, description, skills) is instantly pre-filled!
+   - Click **"Publish Job Vacancy Instantly"**: notice the job is published live immediately with a green confirmation banner!
+   - Switch to **Manage Vacancies tab:** view the newly posted vacancy active and accepting applications.
+   - Switch to **Applicant Pipeline tab:** filter by job title; view candidate profiles.
    - Change application status using the dropdown: select **"Schedule Interview 🗓️"**.
-   - In the modal, select date/time, plant venue, and security gate instructions, then confirm. Notice the candidate is immediately updated!
-   - **Create Job Posting tab:** fill out the vacancy form with shift type, salary range, free bus toggle, and publish.
+   - In the modal, select date/time, plant venue, and security gate instructions, then confirm. The candidate's dashboard updates immediately.
    - **Business Verification Documents tab:** view approved GSTIN document and submit a new Factory License document.
 
 ### Test Scenario 3: Admin Journey (🛡️ Moderation Admin)
 1. In the top bar, click **"Admin"** (or login as Admin).
 2. Navigate to **Admin Dashboard (`/dashboard/admin`)**:
-   - **Real Database Analytics tab:** view live metrics for Seekers, Employers, Active Jobs, Category distribution, and Village breakdown.
-   - **Job Approvals tab:** inspect pending jobs (e.g. *Solar Panel Warehouse Helpers*). Test approving or rejecting with feedback notes.
+   - **Real Database Analytics tab:** view live metrics for Seekers, Employers, Active Jobs, Category distribution, and Atchuthapuram area breakdown.
+   - **Job Approvals tab:** inspect pending jobs. Test approving or rejecting with feedback notes.
    - **Employer Verification tab:** review registered companies. Test approving pending employers or clicking **"Suspend Account"** to blacklist fraudulent agencies.
    - **Fake Job Reports tab:** review reports filed by candidates. Examine details and test *Enforce Sanction & Resolve*.
    - **Moderation & Audit Trail tab:** inspect immutable audit logs of all actions, targets, admin IDs, and IP addresses.
-   - **Villages & Categories tab:** review the 20 official villages and 12 categories.
+   - **Job Categories & Scope tab:** review the 12 categories and local operational boundaries.
 
 ### Test Scenario 4: Anti-Fraud Fake Job Reporting
 1. Visit `/jobs`.
@@ -197,7 +192,7 @@ The project includes the complete database schema in `supabase/schema.sql`.
    - Tables: `villages`, `job_categories`, `profiles`, `employers`, `employer_documents`, `jobs`, `applications`, `saved_jobs`, `job_reports`, `notifications`, `audit_logs`
    - Complete Row Level Security (RLS) policies
    - Automatic profile creation triggers linked to `auth.users`
-   - Seed data for 20 villages and 12 categories
+   - Seed data for Atchuthapuram and 12 categories
 
 ### 2. Configure Environment Variables
 Copy `.env.example` to `.env.local` and add your Supabase credentials:
@@ -207,7 +202,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-public-key
 SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 ```
-*(Note: If left empty, the application automatically runs in zero-friction Local Demo Mode with persistent localStorage, allowing complete testing immediately without database setup!)*
+*(Note: If left empty, the application automatically runs in zero-friction Local Demo Mode with persistent storage, allowing complete testing immediately without database setup!)*
 
 ---
 
@@ -215,12 +210,12 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 
 1. Push your repository to GitHub:
    ```bash
-   git remote add origin https://github.com/your-username/atchujobs.git
+   git remote add origin https://github.com/your-username/atpjobs.git
    git branch -M main
    git push -u origin main
    ```
 2. Go to [Vercel Dashboard](https://vercel.com) and click **"Add New Project"**.
-3. Import the `atchujobs` GitHub repository.
+3. Import the `atpjobs` GitHub repository.
 4. In **Environment Variables**, add:
    - `NEXT_PUBLIC_SUPABASE_URL`
    - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
@@ -245,9 +240,8 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 │   ├── lib/
 │   │   ├── context/
 │   │   │   ├── auth-context.tsx       # Auth provider & demo role switcher
-│   │   │   └── language-context.tsx   # Language context
+│   │   │   └── language-context.tsx   # Language context (English)
 │   │   ├── data/
-│   │   │   ├── villages.ts            # 20 official Atchuthapuram villages
 │   │   │   ├── categories.ts          # 12 local job categories
 │   │   │   └── sample-data.ts         # Authentic local sample employers & jobs
 │   │   ├── services/
@@ -259,11 +253,11 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 │   │       └── client.ts              # Resilient Supabase browser client
 │   ├── components/
 │   │   ├── layout/
-│   │   │   ├── Navbar.tsx             # Navy blue navigation & persona switcher
+│   │   │   ├── Navbar.tsx             # ATP Jobs navy blue navigation & persona switcher
 │   │   │   └── Footer.tsx             # Local contacts & zero-fee warning
 │   │   └── jobs/
 │   │       ├── JobCard.tsx            # Verified job card with perks chips
-│   │       ├── JobSearchBar.tsx       # Keyword, village & category search
+│   │       ├── JobSearchBar.tsx       # Keyword & category search + popular tags
 │   │       ├── JobFilterSidebar.tsx   # Multi-facet filters (bus, shift, salary)
 │   │       ├── ApplyModal.tsx         # Fast application modal with resume select
 │   │       └── ReportJobModal.tsx     # Fake job reporting modal
@@ -277,14 +271,14 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 │       ├── companies/
 │       │   └── page.tsx               # Verified companies directory
 │       ├── villages/
-│       │   └── page.tsx               # 20 Atchuthapuram villages job directory
+│       │   └── page.tsx               # Redirect to /jobs
 │       ├── login/
 │       │   └── page.tsx               # 1-click test login & auth forms
 │       ├── register/
 │       │   └── page.tsx               # Dual registration with anti-fraud pledge
 │       └── dashboard/
 │           ├── seeker/page.tsx        # Seeker dashboard (profile, pipeline, saved)
-│           ├── employer/page.tsx      # Employer dashboard (post job, pipeline, verify)
+│           ├── employer/page.tsx      # Employer dashboard (post job with 1-click templates)
 │           └── admin/page.tsx         # Admin desk (real KPIs, queue, reports, audit)
 └── README.md                 # Complete system documentation & testing guide
 ```
@@ -294,6 +288,6 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 ## 🏆 Final Verification
 
 - ✅ Next.js 14 production build compiled with zero errors.
-- ✅ All 7 routes (`/`, `/jobs`, `/companies`, `/villages`, `/dashboard/seeker`, `/dashboard/employer`, `/dashboard/admin`) return **HTTP 200 OK**.
+- ✅ All routes (`/`, `/jobs`, `/companies`, `/dashboard/seeker`, `/dashboard/employer`, `/dashboard/admin`, etc.) return **HTTP 200 OK**.
 - ✅ Clean Git repository initialized with commits.
-- ✅ 100% compliant with Atchuthapuram geographic and industrial specifications.
+- ✅ 100% compliant with ATP Jobs and Atchuthapuram local specifications.

@@ -2,12 +2,12 @@ import { Application, ApplicationStatus } from '@/types';
 import { INITIAL_APPLICATIONS, SAMPLE_USERS, INITIAL_EMPLOYERS } from '@/lib/data/sample-data';
 import { getJobById, getStoredJobs, saveStoredJobs } from './job-service';
 
-const APPLICATIONS_KEY = 'atchujobs_applications';
+const APPLICATIONS_KEY = 'atpjobs_applications';
 
 export function getStoredApplications(): Application[] {
   if (typeof window === 'undefined') return INITIAL_APPLICATIONS;
   try {
-    const raw = localStorage.getItem(APPLICATIONS_KEY);
+    const raw = localStorage.getItem(APPLICATIONS_KEY) || localStorage.getItem('atchujobs_applications');
     if (!raw) {
       localStorage.setItem(APPLICATIONS_KEY, JSON.stringify(INITIAL_APPLICATIONS));
       return INITIAL_APPLICATIONS;
@@ -27,7 +27,7 @@ export function saveStoredApplications(apps: Application[]) {
 export function populateApplication(app: Application): Application {
   const job = getJobById(app.job_id);
   const employers = typeof window !== 'undefined'
-    ? (JSON.parse(localStorage.getItem('atchujobs_employers') || 'null') || INITIAL_EMPLOYERS)
+    ? (JSON.parse(localStorage.getItem('atpjobs_employers') || localStorage.getItem('atchujobs_employers') || 'null') || INITIAL_EMPLOYERS)
     : INITIAL_EMPLOYERS;
   const employer = employers.find((e: any) => e.id === app.employer_id) || job?.employer;
   const seeker = SAMPLE_USERS.seeker; // Seeker profile
