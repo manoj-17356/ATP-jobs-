@@ -1,8 +1,8 @@
 {
-  "name": "atchujobs",
+  "name": "atpjobs",
   "version": "1.0.0",
   "private": true,
-  "description": "AtchuJobs - Local Job Portal for Atchuthapuram Mandal, Anakapalli District, AP",
+  "description": "ATP Jobs - Local Job Portal for Atchuthapuram",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
