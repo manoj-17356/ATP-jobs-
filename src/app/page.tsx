@@ -27,7 +27,6 @@ import {
   Stethoscope,
   Hammer,
   Sparkles,
-  Award,
   AlertTriangle,
 } from 'lucide-react';
 
@@ -135,39 +134,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3. ZERO-FEE & FAKE JOB PREVENTION BANNER */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-r from-blue-900 to-navy-900 text-white rounded-2xl p-6 sm:p-8 shadow-md border border-navy-800 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="space-y-2 max-w-2xl">
-            <div className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-300 uppercase tracking-wider bg-amber-400/10 px-2.5 py-1 rounded-md">
-              <Award className="w-3.5 h-3.5" />
-              Candidate Protection Policy
-            </div>
-            <h3 className="text-xl sm:text-2xl font-bold leading-tight">
-              Never Pay Any Money for Jobs in Atchuthapuram
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              ATP Jobs enforces a strict zero-tolerance mandate. If any recruiter or agency asks for application fees, medical test deposits, or gate pass money, report them instantly. Our admin moderation desk investigates within 2 hours.
-            </p>
-          </div>
-          <div className="shrink-0 flex flex-col sm:flex-row gap-3">
-            <Link
-              href="/jobs"
-              className="px-5 py-2.5 bg-amber-400 hover:bg-amber-300 text-navy-950 text-xs font-bold rounded-xl transition text-center shadow-sm"
-            >
-              Explore Free Jobs
-            </Link>
-            <Link
-              href="/dashboard/employer?tab=verification"
-              className="px-5 py-2.5 bg-navy-800 hover:bg-navy-700 text-white border border-slate-700 text-xs font-semibold rounded-xl transition text-center"
-            >
-              Employer Verification
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. LATEST VERIFIED JOBS */}
+      {/* 3. LATEST VERIFIED JOBS */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
           <div>

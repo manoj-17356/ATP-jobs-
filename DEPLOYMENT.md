@@ -192,3 +192,4 @@ Once deployed, visit your live URL (`https://atp-jobs.vercel.app`) and verify:
 ---
 
 🎉 **Congratulations! Your ATP Jobs portal is now live on the internet, completely free!**
+
